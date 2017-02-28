@@ -6,11 +6,11 @@ title: OpenAPI Toolbox
 <h1>OpenAPI Toolbox</h1>
 
 <!-- Definitions-->
-<table>
+<table cellpadding="3" cellspacing="2">
 {% for tool in site.data.tools %}
 <tr>
-<td width="150"><img src="{{ tool.image }}" align="left" width="150" /></td>
-<td><a href="{{ tool.url }}"><strong>{{ tool.title }}</strong></a><br />{{ tool.details }}</td>
+<td width="150"><img src="{{ tool.image }}" align="left" width="150" style="padding: 15px;" /></td>
+<td style="padding: 10px;"><a href="{{ tool.url }}"><strong>{{ tool.title }}</strong></a><br />{{ tool.details }}</td>
 </tr>
 {% endfor %}
 </table>

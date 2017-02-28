@@ -1,1 +1,318 @@
-herro
+- title: ReDoc
+  details: nothing
+  url: 'https://github.com/Rebilly/ReDoc'
+  image: 'https://s3.amazonaws.com/openapi/redoc-demo.png'
+  orgs: Rebilly
+  type: Documentation
+  tags: 'Mobile, Web'
+  license: MIT
+  license_url: 'https://github.com/Rebilly/ReDoc/blob/master/LICENSE'
+- title: Yeoman Generator
+  details: nothing
+  url: 'https://github.com/Rebilly/generator-openapi-repo'
+  image: 'https://s3.amazonaws.com/openapi/redoc-yeoman-generator.png'
+  orgs: Rebilly
+  type: Generator
+  tags: 'Yeoman, Web'
+  license: MIT
+  license_url: 'https://github.com/Rebilly/generator-openapi-repo/blob/master/LICENSE'
+- title: New York Times OpenAPI
+  details: nothing
+  url: 'https://github.com/NYTimes/public_api_specs'
+  image: 'https://s3.amazonaws.com/openapi/new-york-times-developers.png'
+  orgs: New York Times
+  type: OpenAPI
+  tags: News
+  license: Apache 2.0
+  license_url: 'https://github.com/NYTimes/public_api_specs/blob/master/LICENSE'
+- title: APIs.guru
+  details: nothing
+  url: 'https://apis.guru/'
+  image: 'https://s3.amazonaws.com/openapi/apis-guru-logo.png'
+  orgs: APIs.guru
+  type: Directory
+  tags: 'Directory, Catalog, Discovery'
+  license: MIT
+  license_url: 'https://github.com/APIs-guru/openapi-directory/blob/master/LICENSE'
+- title: apib2swagger
+  details: nothing
+  url: 'https://github.com/kminami/apib2swagger/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Keisuke Minami
+  type: Converter
+  tags: 'Conversion, API Blueprint'
+  license: MIT
+  license_url: 'https://github.com/kminami/apib2swagger/blob/master/LICENSE'
+- title: Apivore
+  details: nothing
+  url: 'https://github.com/westfieldlabs/apivore/'
+  image: 'https://s3.amazonaws.com/openapi/westfieldlabs-logo.png'
+  orgs: Westfield Labs
+  type: Testing
+  tags: 'Ruby, Rails'
+  license: Apache 2.0
+  license_url: 'https://github.com/westfieldlabs/apivore/blob/master/LICENSE'
+- title: Bravado
+  details: nothing
+  url: 'https://github.com/Yelp/bravado/'
+  image: 'https://s3.amazonaws.com/openapi/yelp-logo.png'
+  orgs: Yelp
+  type: Client
+  tags: Python
+  license: MIT
+  license_url: 'https://github.com/Yelp/bravado/blob/master/LICENSE.txt'
+- title: Compojure API
+  details: nothing
+  url: 'https://github.com/metosin/compojure-api/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Metosin
+  type: Server
+  tags: 'Compojure, Ring'
+  license: Eclipse Public License
+  license_url: 'https://github.com/metosin/compojure-api/'
+- title: Django REST Swagger
+  details: nothing
+  url: 'https://github.com/marcgibbons/django-rest-swagger/'
+  image: 'https://s3.amazonaws.com/openapi/django-rest-ui-screenshot.png'
+  orgs: Marc Gibbons
+  type: Generator
+  tags: 'Django, Python'
+  license: MIT
+  license_url: 'https://github.com/marcgibbons/django-rest-swagger/blob/master/LICENSE'
+- title: Flask RestPlus
+  details: nothing
+  url: 'https://github.com/noirbizarre/flask-restplus/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: ''
+  type: Server
+  tags: 'Flask, Python'
+  license: MIT
+  license_url: 'https://github.com/noirbizarre/flask-restplus/blob/master/LICENSE'
+- title: Swagger JS
+  details: nothing
+  url: 'https://github.com/swagger-api/swagger-js'
+  image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
+  orgs: Swagger
+  type: Client
+  tags: 'JavaScript, Core'
+  license: Apache 2.0
+  license_url: 'https://github.com/swagger-api/swagger-js/blob/master/LICENSE'
+- title: Swagger UI
+  details: nothing
+  url: 'https://github.com/swagger-api/swagger-ui'
+  image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
+  orgs: Swagger
+  type: Documentation
+  tags: 'JavaScript, Core'
+  license: Apache 2.0
+  license_url: 'https://github.com/swagger-api/swagger-ui/blob/master/LICENSE'
+- title: Swagger Validator Badge
+  details: nothing
+  url: 'https://github.com/swagger-api/validator-badge'
+  image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
+  orgs: Swagger
+  type: Badge
+  tags: 'Javascript, Core'
+  license: Apache 2.0
+  license_url: 'https://github.com/swagger-api/validator-badge/blob/master/LICENSE'
+- title: Swagger Tools
+  details: nothing
+  url: 'https://github.com/apigee-127/swagger-tools'
+  image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
+  orgs: Apigee 127
+  type: Tool
+  tags: 'Node.js, JavaScript, Core'
+  license: Apache 2.0
+  license_url: 'https://github.com/apigee-127/swagger-tools/blob/master/LICENSE'
+- title: Swagger Editor
+  details: nothing
+  url: 'https://github.com/swagger-api/swagger-editor'
+  image: 'https://s3.amazonaws.com/openapi/swagger-editor-screenshot.png'
+  orgs: Swagger
+  type: Editor
+  tags: 'Javascript, Core'
+  license: Apache 2.0
+  license_url: 'https://github.com/swagger-api/swagger-editor/blob/master/LICENSE'
+- title: Swagger Core
+  details: nothing
+  url: 'https://github.com/swagger-api/swagger-core'
+  image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
+  orgs: Swagger
+  type: Server
+  tags: 'Java, Core'
+  license: Apache 2.0
+  license_url: 'https://github.com/swagger-api/swagger-core/blob/master/LICENSE'
+- title: Swagger Parser
+  details: nothing
+  url: 'https://github.com/swagger-api/swagger-parser'
+  image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
+  orgs: Swagger
+  type: Parser
+  tags: 'Java, Core'
+  license: Apache 2.0
+  license_url: 'https://github.com/swagger-api/swagger-parser/blob/master/LICENSE'
+- title: Swagger Codegen
+  details: nothing
+  url: 'https://github.com/swagger-api/swagger-codegen'
+  image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
+  orgs: Swagger
+  type: 'Client, Server'
+  tags: >-
+    Core, ActionScript, Bash, C#, C++, Clojure, Dart, Elixir, Erlang ,Go,
+    Groovy, Haskell, Java, Node.js Objective-C, Perl, PHP, Python, Ruby, Scala,
+    Swift, Typescript
+  license: Apache 2.0
+  license_url: 'https://github.com/swagger-api/swagger-codegen/blob/master/LICENSE'
+- title: Swagger Node
+  details: nothing
+  url: 'https://github.com/swagger-api/swagger-node'
+  image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
+  orgs: Swagger
+  type: Client
+  tags: 'Node.js, JavaScript, Core'
+  license: Apache 2.0
+  license_url: 'https://github.com/swagger-api/swagger-node/blob/master/LICENSE'
+- title: Grape Doorkeeper
+  details: nothing
+  url: 'https://github.com/sethherr/grape-doorkeeper/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Seth Herr
+  type: Server
+  tags: 'Ruby, Doorkeeper, Grape'
+  license: MIT
+  license_url: 'https://github.com/ruby-grape/grape/blob/master/LICENSE'
+- title: HAPI Swagger
+  details: nothing
+  url: 'https://github.com/glennjones/hapi-swagger/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Glenn Jones
+  type: Generator
+  tags: 'HAPI, JavaScript'
+  license: MIT
+  license_url: 'https://github.com/glennjones/hapi-swagger/blob/master/license.txt'
+- title: Nancy.Swagger
+  details: nothing
+  url: 'https://github.com/yahehe/Nancy.Swagger'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Ciaran Downey
+  type: Generator
+  tags: '.NET, C#, Nancy'
+  license: MIT
+  license_url: 'https://github.com/yahehe/Nancy.Swagger/blob/master/LICENSE'
+- title: Route Swagger
+  details: nothing
+  url: 'https://github.com/frankiesardo/route-swagger'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Frankie Sardo
+  type: Generator
+  tags: 'Pedestal, Tripod'
+  license: Eclipse Public License
+  license_url: 'https://github.com/frankiesardo/route-swagger/blob/master/LICENSE.md'
+- title: Pyramid Swagger
+  details: nothing
+  url: 'https://github.com/striglia/pyramid_swagger/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Scott Triglia
+  type: Generator
+  tags: 'Python, Pyramid Web Framework'
+  license: MIT
+  license_url: 'https://github.com/striglia/pyramid_swagger/blob/master/LICENSE'
+- title: pyswagger
+  details: nothing
+  url: 'https://github.com/mission-liao/pyswagger/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Mission Liao
+  type: Client
+  tags: Python
+  license: MIT
+  license_url: 'https://github.com/mission-liao/pyswagger/blob/master/LICENSE'
+- title: Springfox
+  details: nothing
+  url: 'https://github.com/springfox/springfox/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Spring Fox
+  type: Generator
+  tags: 'Java, Spring Boot'
+  license: Apache 2.0
+  license_url: 'https://github.com/springfox/springfox/blob/master/LICENSE'
+- title: Swagger Maven Plugin
+  details: nothing
+  url: 'https://github.com/kongchen/swagger-maven-plugin/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Yukai Kong
+  type: Generator
+  tags: 'Java, SpringMvc, JAX-RS'
+  license: Apache 2.0
+  license_url: 'https://github.com/kongchen/swagger-maven-plugin/blob/master/LICENSE'
+- title: Swagger PHP
+  details: nothing
+  url: 'https://github.com/zircote/swagger-php/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Robert Allen
+  type: Generator
+  tags: PHP
+  license: Apache 2.0
+  license_url: 'https://github.com/zircote/swagger-php/blob/master/LICENSE-2.0.txt'
+- title: Swagger2Markup
+  details: nothing
+  url: 'https://github.com/Swagger2Markup/swagger2markup'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Swagger2Markup
+  type: Converter
+  tags: Markup
+  license: Apache 2.0
+  license_url: 'https://github.com/Swagger2Markup/swagger2markup/blob/master/LICENSE.txt'
+- title: Swaggerize Express
+  details: nothing
+  url: 'https://github.com/krakenjs/swaggerize-express/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Kraken.js Team
+  type: Server
+  tags: 'Node.js, JavaScript'
+  license: Apache 2.0
+  license_url: 'https://github.com/krakenjs/swaggerize-express/blob/master/LICENSE.txt'
+- title: Swaggerize HAPI
+  details: nothing
+  url: 'https://github.com/krakenjs/swaggerize-hapi/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Kraken.js Team
+  type: Server
+  tags: 'HAPI, JavaScript'
+  license: Apache 2.0
+  license_url: 'https://github.com/krakenjs/swaggerize-hapi/blob/master/LICENSE.txt'
+- title: Square
+  details: nothing
+  url: 'https://github.com/square/connect-api-specification'
+  image: 'https://s3.amazonaws.com/openapi/square-logo.png'
+  orgs: Square
+  type: OpenAPI
+  tags: Payments
+  license: Apache 2.0
+  license_url: 'https://github.com/square/connect-api-specification/blob/master/LICENSE.txt'
+- title: FAL.S.Y
+  details: nothing
+  url: 'https://github.com/pingf/falsy'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Makefile
+  type: Server
+  tags: 'Falcon, Python'
+  license: MIT
+  license_url: 'https://github.com/pingf/falsy/blob/master/LICENSE'
+- title: Spectacle
+  details: nothing
+  url: 'https://github.com/sourcey/spectacle'
+  image: 'https://s3.amazonaws.com/openapi/spectacle-documentation-screenshot.jpg'
+  orgs: Sourcey
+  type: Documentation
+  tags: JavaScript
+  license: MIT
+  license_url: 'http://sourcey.com/spectacle/'
+- title: LucyBot API Console
+  details: nothing
+  url: 'https://github.com/lucybot/lucy-console'
+  image: 'https://s3.amazonaws.com/openapi/lucybot-logo.png'
+  orgs: Lucybot
+  type: Dcumentation
+  tags: JavaScript
+  license: Affero General Public License
+  license_url: 'https://github.com/lucybot/lucy-console/blob/static-site/LICENSE'

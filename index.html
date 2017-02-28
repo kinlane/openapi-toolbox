@@ -4,21 +4,11 @@ title: OpenAPI Toolbox
 ---
 
 <h1>OpenAPI Toolbox</h1>
-
-<!-- Definitions-->
-<table cellpadding="3" cellspacing="2">
-{% for tool in site.data.tools %}
-<tr>
-<td width="125" valign="top"><img src="{{ tool.image }}" align="left" width="125" style="padding: 15px;" /></td>
-<td style="padding: 10px;" valign="top">
-  <p><a href="{{ tool.url }}"><strong>{{ tool.title }}</strong></a><br />
-  {{ tool.details }}</p>
-  <ul>
-    <li><strong>URL:</strong> <a href="{{ tool.url }}" target="_blank">Visit</a></li>
-    <li><strong>License:</strong> <a href="{{ tool.license_url }}" target="_blank">{{ tool.license }}</a></li>
-  </ul>
-  <hr style="width: 75%; text-align:left;" />
-</td>
-</tr>
-{% endfor %}
-</table>
+<p>This is my toolbox of OpenAPI-driven solutions. This site is a Jekyll-driven website running on Github, using Github Pages. The tools in this toolbox are driven by a YAML file in the _data folder for this repository.</p>
+<p>I have them organized by tag, which are always evolving:</p>
+<ul>
+  <li><a href="/documentation/">Documentation</a></li>
+  <li><a href="/generators/">Generators</a></li>
+  <li><a href="/server/">Server</a></li>
+</ul>
+<p>This project is <a href="https://github.com/kinlane/openapi-toolbox">forkable using the Github repository</a>, and accessible as JSON. If you have a tool you think should be added, <a href="https://github.com/kinlane/openapi-toolbox/issues">you can submit an issue on the Github repository</a>.</p>

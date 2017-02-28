@@ -104,7 +104,7 @@ title: Update
                 if($path==$writepath)
                   {
                   repo.writemanual('master',$writepath, $yaml_dump, 'Save', $sha, function(err) { });
-                  //console.log("writing " + $writepath);
+                  console.log("writing " + $writepath);
                   alert("saved " + $writepath);
                   }
                 });

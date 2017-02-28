@@ -1,0 +1,14 @@
+---
+layout: none
+---
+{% for tool in site.data.tools %}{
+- title: {{ tool.title }}
+  details: {{ tool.details }}
+  url: {{ tool.url }}
+  image: {{ tool.image }}
+  orgs: {{ tool.orgs }}
+  type: {{ tool.type }}
+  tags: {{ tool.tags }}
+  license: {{ tool.license }}
+  license_url: {{ tool.license_url }}
+{% endfor %}}

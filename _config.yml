@@ -14,8 +14,8 @@ highlighter:  rouge
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md",".DS_Store"]
 
-github_user: api-evangelist-tools
-github_repo: spreadsheet-to-yaml-in-jekyll
+github_user: kinlane
+github_repo: openapi-toolbox
 
 production_url : http://openapi.toolbox.apievangelist.com
 

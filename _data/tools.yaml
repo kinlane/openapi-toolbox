@@ -1,5 +1,7 @@
 - title: ReDoc
-  details: nothing
+  details: >-
+    A responsive, interactive, and attractive looking API documenation that is
+    driven by the OpenAPI specification.
   url: 'https://github.com/Rebilly/ReDoc'
   image: 'https://s3.amazonaws.com/openapi/redoc-demo.png'
   orgs: Rebilly
@@ -8,7 +10,9 @@
   license: MIT
   license_url: 'https://github.com/Rebilly/ReDoc/blob/master/LICENSE'
 - title: Yeoman Generator
-  details: nothing
+  details: >-
+    A Yeoman generator for the OpenAPI specification, helping you easily share
+    your OpenAPI using Github.
   url: 'https://github.com/Rebilly/generator-openapi-repo'
   image: 'https://s3.amazonaws.com/openapi/redoc-yeoman-generator.png'
   orgs: Rebilly
@@ -17,7 +21,7 @@
   license: MIT
   license_url: 'https://github.com/Rebilly/generator-openapi-repo/blob/master/LICENSE'
 - title: New York Times OpenAPI
-  details: nothing
+  details: The API Specs for the APIs available from developer.nytimes.com.
   url: 'https://github.com/NYTimes/public_api_specs'
   image: 'https://s3.amazonaws.com/openapi/new-york-times-developers.png'
   orgs: New York Times
@@ -26,7 +30,9 @@
   license: Apache 2.0
   license_url: 'https://github.com/NYTimes/public_api_specs/blob/master/LICENSE'
 - title: APIs.guru
-  details: nothing
+  details: >-
+    Wikipedia for Web APIs. Directory of REST API specs in OpenAPI(fka Swagger)
+    2.0 format.
   url: 'https://apis.guru/'
   image: 'https://s3.amazonaws.com/openapi/apis-guru-logo.png'
   orgs: APIs.guru
@@ -35,7 +41,7 @@
   license: MIT
   license_url: 'https://github.com/APIs-guru/openapi-directory/blob/master/LICENSE'
 - title: apib2swagger
-  details: nothing
+  details: Convert API Blueprint to Swagger.
   url: 'https://github.com/kminami/apib2swagger/'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Keisuke Minami
@@ -44,7 +50,9 @@
   license: MIT
   license_url: 'https://github.com/kminami/apib2swagger/blob/master/LICENSE'
 - title: Apivore
-  details: nothing
+  details: >-
+    Automatically tests your rails API against its OpenAPI (Swagger) description
+    of end-points, models, and query parameters.
   url: 'https://github.com/westfieldlabs/apivore/'
   image: 'https://s3.amazonaws.com/openapi/westfieldlabs-logo.png'
   orgs: Westfield Labs
@@ -53,7 +61,9 @@
   license: Apache 2.0
   license_url: 'https://github.com/westfieldlabs/apivore/blob/master/LICENSE'
 - title: Bravado
-  details: nothing
+  details: >-
+    Bravado is a Yelp maintained fork of digium/swagger-py for use with OpenAPI
+    Specification
   url: 'https://github.com/Yelp/bravado/'
   image: 'https://s3.amazonaws.com/openapi/yelp-logo.png'
   orgs: Yelp
@@ -62,7 +72,7 @@
   license: MIT
   license_url: 'https://github.com/Yelp/bravado/blob/master/LICENSE.txt'
 - title: Compojure API
-  details: nothing
+  details: Stuff on top of Compojure for making sweet web apis.
   url: 'https://github.com/metosin/compojure-api/'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Metosin
@@ -71,7 +81,7 @@
   license: Eclipse Public License
   license_url: 'https://github.com/metosin/compojure-api/'
 - title: Django REST Swagger
-  details: nothing
+  details: An API documentation generator for Swagger UI and Django REST Framework.
   url: 'https://github.com/marcgibbons/django-rest-swagger/'
   image: 'https://s3.amazonaws.com/openapi/django-rest-ui-screenshot.png'
   orgs: Marc Gibbons
@@ -80,7 +90,9 @@
   license: MIT
   license_url: 'https://github.com/marcgibbons/django-rest-swagger/blob/master/LICENSE'
 - title: Flask RestPlus
-  details: nothing
+  details: >-
+    Flask-RESTPlus is an extension for Flask that adds support for quickly
+    building REST APIs.
   url: 'https://github.com/noirbizarre/flask-restplus/'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: ''
@@ -89,7 +101,7 @@
   license: MIT
   license_url: 'https://github.com/noirbizarre/flask-restplus/blob/master/LICENSE'
 - title: Swagger JS
-  details: nothing
+  details: Javascript library to connect to swagger-enabled APIs via browser or nodejs
   url: 'https://github.com/swagger-api/swagger-js'
   image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
   orgs: Swagger
@@ -98,7 +110,10 @@
   license: Apache 2.0
   license_url: 'https://github.com/swagger-api/swagger-js/blob/master/LICENSE'
 - title: Swagger UI
-  details: nothing
+  details: >-
+    Swagger UI is a dependency-free collection of HTML, Javascript, and CSS
+    assets that dynamically generate beautiful documentation from a
+    Swagger-compliant API.
   url: 'https://github.com/swagger-api/swagger-ui'
   image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
   orgs: Swagger
@@ -107,7 +122,10 @@
   license: Apache 2.0
   license_url: 'https://github.com/swagger-api/swagger-ui/blob/master/LICENSE'
 - title: Swagger Validator Badge
-  details: nothing
+  details: >-
+    This project shows a "valid swagger" badge on your site. There is an online
+    version hosted on http://swagger.io. You can also pull a docker image of the
+    validator directly from DockerHub.
   url: 'https://github.com/swagger-api/validator-badge'
   image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
   orgs: Swagger
@@ -116,7 +134,7 @@
   license: Apache 2.0
   license_url: 'https://github.com/swagger-api/validator-badge/blob/master/LICENSE'
 - title: Swagger Tools
-  details: nothing
+  details: A Node.js and browser module that provides tooling around Swagger.
   url: 'https://github.com/apigee-127/swagger-tools'
   image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
   orgs: Apigee 127
@@ -125,7 +143,9 @@
   license: Apache 2.0
   license_url: 'https://github.com/apigee-127/swagger-tools/blob/master/LICENSE'
 - title: Swagger Editor
-  details: nothing
+  details: >-
+    Swagger Editor lets you edit Swagger API specifications in YAML inside your
+    browser and to preview documentations in real time.
   url: 'https://github.com/swagger-api/swagger-editor'
   image: 'https://s3.amazonaws.com/openapi/swagger-editor-screenshot.png'
   orgs: Swagger
@@ -134,7 +154,9 @@
   license: Apache 2.0
   license_url: 'https://github.com/swagger-api/swagger-editor/blob/master/LICENSE'
 - title: Swagger Core
-  details: nothing
+  details: >-
+    Examples and server integrations for generating the Swagger API
+    Specification, which enables easy access to your REST AP
   url: 'https://github.com/swagger-api/swagger-core'
   image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
   orgs: Swagger
@@ -143,7 +165,7 @@
   license: Apache 2.0
   license_url: 'https://github.com/swagger-api/swagger-core/blob/master/LICENSE'
 - title: Swagger Parser
-  details: nothing
+  details: Swagger Spec to Java POJOs
   url: 'https://github.com/swagger-api/swagger-parser'
   image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
   orgs: Swagger
@@ -152,7 +174,10 @@
   license: Apache 2.0
   license_url: 'https://github.com/swagger-api/swagger-parser/blob/master/LICENSE'
 - title: Swagger Codegen
-  details: nothing
+  details: >-
+    swagger-codegen contains a template-driven engine to generate documentation,
+    API clients and server stubs in different languages by parsing your OpenAPI
+    / Swagger definition.
   url: 'https://github.com/swagger-api/swagger-codegen'
   image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
   orgs: Swagger
@@ -164,7 +189,7 @@
   license: Apache 2.0
   license_url: 'https://github.com/swagger-api/swagger-codegen/blob/master/LICENSE'
 - title: Swagger Node
-  details: nothing
+  details: Swagger module for node.js
   url: 'https://github.com/swagger-api/swagger-node'
   image: 'https://s3.amazonaws.com/openapi/swagger-logo-300x239.png'
   orgs: Swagger
@@ -173,7 +198,9 @@
   license: Apache 2.0
   license_url: 'https://github.com/swagger-api/swagger-node/blob/master/LICENSE'
 - title: Grape Doorkeeper
-  details: nothing
+  details: >-
+    This is a basic Rails 4 application with Doorkeeper, Grape & Swagger for
+    getting to API building quickly.
   url: 'https://github.com/sethherr/grape-doorkeeper/'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Seth Herr
@@ -182,7 +209,7 @@
   license: MIT
   license_url: 'https://github.com/ruby-grape/grape/blob/master/LICENSE'
 - title: HAPI Swagger
-  details: nothing
+  details: A Swagger interface for HAPI
   url: 'https://github.com/glennjones/hapi-swagger/'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Glenn Jones
@@ -191,7 +218,7 @@
   license: MIT
   license_url: 'https://github.com/glennjones/hapi-swagger/blob/master/license.txt'
 - title: Nancy.Swagger
-  details: nothing
+  details: Nancy plugin for generated API documentation in Swagger format.
   url: 'https://github.com/yahehe/Nancy.Swagger'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Ciaran Downey
@@ -200,7 +227,7 @@
   license: MIT
   license_url: 'https://github.com/yahehe/Nancy.Swagger/blob/master/LICENSE'
 - title: Route Swagger
-  details: nothing
+  details: Generate Swagger documentation from pedestal (or tripod) routes
   url: 'https://github.com/frankiesardo/route-swagger'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Frankie Sardo
@@ -209,7 +236,9 @@
   license: Eclipse Public License
   license_url: 'https://github.com/frankiesardo/route-swagger/blob/master/LICENSE.md'
 - title: Pyramid Swagger
-  details: nothing
+  details: >-
+    Convenient tools for using Swagger to define and validate your interfaces in
+    a Pyramid webapp.
   url: 'https://github.com/striglia/pyramid_swagger/'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Scott Triglia
@@ -218,7 +247,9 @@
   license: MIT
   license_url: 'https://github.com/striglia/pyramid_swagger/blob/master/LICENSE'
 - title: pyswagger
-  details: nothing
+  details: >-
+    An OpenAPI (fka Swagger) client & converter in python, which is type-safe,
+    dynamic, spec-compliant.
   url: 'https://github.com/mission-liao/pyswagger/'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Mission Liao
@@ -227,7 +258,7 @@
   license: MIT
   license_url: 'https://github.com/mission-liao/pyswagger/blob/master/LICENSE'
 - title: Springfox
-  details: nothing
+  details: Automated JSON API documentation for API's built with Spring
   url: 'https://github.com/springfox/springfox/'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Spring Fox
@@ -236,7 +267,9 @@
   license: Apache 2.0
   license_url: 'https://github.com/springfox/springfox/blob/master/LICENSE'
 - title: Swagger Maven Plugin
-  details: nothing
+  details: >-
+    This plugin enables your Swagger-annotated project to generate Swagger specs
+    and customizable, templated static documents during the maven build phase.
   url: 'https://github.com/kongchen/swagger-maven-plugin/'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Yukai Kong
@@ -245,7 +278,9 @@
   license: Apache 2.0
   license_url: 'https://github.com/kongchen/swagger-maven-plugin/blob/master/LICENSE'
 - title: Swagger PHP
-  details: nothing
+  details: >-
+    Generate interactive Swagger documentation for your RESTful API using
+    doctrine annotations.
   url: 'https://github.com/zircote/swagger-php/'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Robert Allen
@@ -254,7 +289,14 @@
   license: Apache 2.0
   license_url: 'https://github.com/zircote/swagger-php/blob/master/LICENSE-2.0.txt'
 - title: Swagger2Markup
-  details: nothing
+  details: >-
+    The primary goal of this project is to simplify the generation of an
+    up-to-date RESTful API documentation by combining documentation thats been
+    hand-written with auto-generated API documentation produced by Swagger. The
+    result is intended to be an up-to-date, easy-to-read, on- and offline user
+    guide, comparable to GitHubs API documentation. The output of Swagger2Markup
+    can be used as an alternative to swagger-ui and can be served as static
+    content.
   url: 'https://github.com/Swagger2Markup/swagger2markup'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Swagger2Markup
@@ -263,7 +305,9 @@
   license: Apache 2.0
   license_url: 'https://github.com/Swagger2Markup/swagger2markup/blob/master/LICENSE.txt'
 - title: Swaggerize Express
-  details: nothing
+  details: >-
+    swaggerize-express is a design-driven approach to building RESTful apis with
+    Swagger and Express.
   url: 'https://github.com/krakenjs/swaggerize-express/'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Kraken.js Team
@@ -272,7 +316,7 @@
   license: Apache 2.0
   license_url: 'https://github.com/krakenjs/swaggerize-express/blob/master/LICENSE.txt'
 - title: Swaggerize HAPI
-  details: nothing
+  details: Design-driven apis with swagger 2.0 and hapi.
   url: 'https://github.com/krakenjs/swaggerize-hapi/'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Kraken.js Team
@@ -281,7 +325,9 @@
   license: Apache 2.0
   license_url: 'https://github.com/krakenjs/swaggerize-hapi/blob/master/LICENSE.txt'
 - title: Square
-  details: nothing
+  details: >-
+    This is the project that generates API clients for connecting to the public
+    Square API.
   url: 'https://github.com/square/connect-api-specification'
   image: 'https://s3.amazonaws.com/openapi/square-logo.png'
   orgs: Square
@@ -290,7 +336,9 @@
   license: Apache 2.0
   license_url: 'https://github.com/square/connect-api-specification/blob/master/LICENSE.txt'
 - title: FAL.S.Y
-  details: nothing
+  details: >-
+    FAL.S.Y python api framework(the framework for using falcon, swagger, yaml
+    together)
   url: 'https://github.com/pingf/falsy'
   image: 'https://s3.amazonaws.com/openapi/github-logo.png'
   orgs: Makefile
@@ -299,7 +347,9 @@
   license: MIT
   license_url: 'https://github.com/pingf/falsy/blob/master/LICENSE'
 - title: Spectacle
-  details: nothing
+  details: >-
+    Spectacle generates beautiful static HTML5 documentation from
+    OpenAPI/Swagger 2.0 API specifications.
   url: 'https://github.com/sourcey/spectacle'
   image: 'https://s3.amazonaws.com/openapi/spectacle-documentation-screenshot.jpg'
   orgs: Sourcey
@@ -308,7 +358,9 @@
   license: MIT
   license_url: 'http://sourcey.com/spectacle/'
 - title: LucyBot API Console
-  details: nothing
+  details: >-
+    We utilize OpenAPI (formerly known as Swagger) to generate both static
+    documentation and an interactive API console.
   url: 'https://github.com/lucybot/lucy-console'
   image: 'https://s3.amazonaws.com/openapi/lucybot-logo.png'
   orgs: Lucybot

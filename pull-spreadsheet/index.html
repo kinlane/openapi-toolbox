@@ -56,7 +56,7 @@ title: Update
 
           $title = service['Title'];
           $description = service['Description'];
-          $description = $description.trim();
+          $description = String($description.trim());
           $url = service['URL'];
           $image = service['Image'];
           $orgs = service['Orgs'];

@@ -100,12 +100,12 @@ title: Update
                 $writepath = '_data/tools.yaml';
                 $path = treeValue['path'];
                 $sha = treeValue['sha'];
-                //console.log($path + ' == ' + $writepath);
+                console.log($path + ' == ' + $writepath);
                 if($path==$writepath)
                   {
                   repo.writemanual('gh-pages',$writepath, $yaml_dump, 'Save', $sha, function(err) { });
-                  //console.log("writing " + $writepath);
-                  //alert("saved " + $writepath);
+                  console.log("writing " + $writepath);
+                  alert("saved " + $writepath);
                   }
                 });
               });

@@ -93,7 +93,7 @@ title: Update
             var github = new Github({token: $oAuthToken,auth: "oauth"});
             var repo = github.getRepo($org,$repo);
 
-            repo.getTree('gh-pages?recursive=true', function(err, tree) {
+            repo.getTree('master?recursive=true', function(err, tree) {
 
               $.each(tree, function(treeKey, treeValue) {
 
@@ -103,7 +103,7 @@ title: Update
                 console.log($path + ' == ' + $writepath);
                 if($path==$writepath)
                   {
-                  repo.writemanual('gh-pages',$writepath, $yaml_dump, 'Save', $sha, function(err) { });
+                  repo.writemanual('master',$writepath, $yaml_dump, 'Save', $sha, function(err) { });
                   console.log("writing " + $writepath);
                   alert("saved " + $writepath);
                   }

@@ -1,0 +1,121 @@
+---
+layout: page
+title: Pull Feeds
+---
+
+<script type="text/javascript">
+
+    var $oAuth_Token = getUrlVar('token');
+    var $org = 'indieedtech';
+    var $repo = 'rss-aggregator';
+
+    var $masterFeed = [];
+
+    // RAW is only way we can get at _data
+    $feedurls = 'https://raw.githubusercontent.com/indieedtech/rss-aggregator/gh-pages/_data/feed-urls.json';
+
+    var allFeeds = $.get($feedurls, function (feeds) {
+
+      $feedsJSON = JSON.parse(feeds);
+
+      $countFeeds = 1;
+      $howManyFeeds = $feedsJSON.length;
+
+      $.each($feedsJSON, function(feedKey, feedEntry) {
+
+        $feedName = feedEntry['name'];
+        console.log($feedName);
+        $feedURL = feedEntry['url'];
+        $existAlready = 0;
+
+        var thisFeed = $.get($feedURL, function (feeds) {
+
+          $countItems = 0;
+          $howManyItems = $(feeds).find("item").length;
+
+          $(feeds).find("item").each(function () {
+
+            $feedName = feedEntry['name'];
+
+            var el = $(this);
+            $title = el.find("title").text();
+            $link = el.find("link").text();
+            $pubDate = el.find("pubDate").text();
+            $pubDate = dateFormat($pubDate, "mm/dd/yyyy");
+
+            $feedentry = {};
+          	$feedentry['feed'] = $feedName;
+          	$feedentry['title'] = $title;
+          	$feedentry['link'] = $link;
+            $feedentry['pubDate'] = $pubDate;
+
+            $existAlready = 0;
+            $.each($masterFeed, function(existingKey, existingFeed) {
+                if(existingFeed['feed'] == $feedName && existingFeed['title'] == $title)
+                  {
+                  $existAlready = 1;
+                  }
+                });
+
+            // Add It
+            if($existAlready==0){
+          	  $masterFeed.push($feedentry);
+              }
+
+            $feedItem = '<li><a href="' + $link + '">' + $title + '</a> (<i>' + $feedName + ' on ' + $pubDate + '</i>)</li>';
+
+            $('#process-feeds').append($feedItem);
+
+            $countItems ++;
+
+            });
+          })
+          .done(function() {
+              $countFeeds++;
+
+              // Are we done yet?
+              //console.log($countFeeds + ' == ' + $howManyFeeds + ' && ' + $countItems + ' == ' + $howManyItems);
+              if($countFeeds==$howManyFeeds && $countItems == $howManyItems){
+                $feedJSON = JSON.stringify($masterFeed, null, 4);
+                $feedJSON = unescape(encodeURIComponent($feedJSON));
+
+                var github = new Github({token: $oAuth_Token,auth: "oauth"});
+              	var repo = github.getRepo($org,$repo);
+
+                repo.getTree('gh-pages?recursive=true', function(err, tree) {
+
+              		$.each(tree, function(treeKey, treeValue) {
+
+                    $writepath = '_data/feed-entries.json';
+              			$path = treeValue['path'];
+              			$sha = treeValue['sha'];
+                    //console.log($path + ' == ' + $writepath);
+              			if($path==$writepath)
+              				{
+                      repo.writemanual('gh-pages',$writepath, $feedJSON, 'Save', $sha, function(err) { });
+                      console.log("writing " + $writepath);
+              				}
+              			});
+              		});
+                }
+            })
+          .fail(function() {
+            // Feed failed for some reason
+            console.log("FAIL (probably CORS)");
+            $howManyFeeds = $howManyFeeds - 1;
+            $countFeeds++;
+          });
+        });
+      })
+      .done(function() {
+          console.log("SUCESS");
+        })
+      .fail(function() {
+        console.log("NO GO AT ALL!");
+      });
+
+</script>
+
+<h3>Pull Feeds</h3>
+<p>This pulls the feeds from any urls listed in the <a href="">_data/feed-urls.json</a> file, which contains all the target RSS locations we are looking to aggregate.</p>
+<ul id="process-feeds"></ul>

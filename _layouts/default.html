@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  {% include head.html %}
+
+  <body>
+
+    <header class="masthead">
+      <div class="masthead-inner" align="center">
+
+		  <h2 style="font-size: 20px;">{"API Evangelist"}</h2>
+      <a href="http://apievangelist.com" target="_blank" id="feature_project_link"><img id="feature_project_image" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png" width="50%" style="border: 1px solid #FFF;" title="API Guides" /></a>
+
+      <div class="colophon">
+        <ul class="colophon-links">
+          <li>
+            <a href="/{{ site.github_repo }}/">Home Page</a>
+          </li>
+          <li style="padding:1px">
+            <a href="http://apievangelist.com" style="font-size: 70%;">
+               <span style="font-size: 70">&#8668;</span>
+              Return to API Evangelist
+            </a>
+
+          </li>
+        </ul>
+      </div>
+
+      <script id="parterListingTemplate" type="text/template">
+          {% raw  %}
+          <a href="{{url}}" target="_blank" title="{{title}}">
+         		<img src="{{logo}}" width="{{width}}" style="padding: 1px 1px {{paddingbottom}}px 1px;" />
+          </a>
+          {% endraw %}
+      </script>
+
+      <div id="partnerListingContainer" align="center" style="background-color:#FFF; margin-top: 20px; padding: 10px 10px 10px 10px; width: 60%; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 3px solid #FFFFFF; margin-bottom: 15px;">
+
+		</div>
+
+      </div>
+    </header>
+
+    <div class="content container">
+
+      <!-- Logo - Banner -->
+    	<p align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" align="center" width="65%" style="padding-bottom: 10px;" /></p>
+
+      	{{ content }}
+
+      <!-- Footer1 -->
+      <p align="center"><a href="{{ site.url }}" target="_blank" id="footer_project_link"><img id="footer_project_image" src="{{ site.footer_image_source }}" width="{{ site.footer_image_width }}%" title="{{ site.footer_title }}" class="fbanner" /></a></p><br />
+
+      <div class="footer">
+        <ul>
+          <li><a href="http://apievangelist.com/">Research</a></li>
+          <li><a href="http://apievangelist.com/blog/">Blog</a></li>
+          <li><a href="http://apievangelist.com/partners/">Partners</a></li>
+          <li><a href="http://kinlane.com/">About</a></li>
+          <li><a href="http://apievangelist.com/numbers/">Numbers</a></li>
+          <li><a href="http://apievangelist.com/branding-guidelines/">Branding</a></li>
+          <li><a href="http://apievangelist.com/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-1119465-51']);
+	  _gaq.push(['_setDomainName', 'apievangelist.com']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+    <script type="text/javascript">
+
+        // project view log
+  	   $url = "https://project.api.kinlane.com/project/view/";
+  	   $vlog = $.post($url, function() {});
+
+        // List Sponsors
+        function listSponsors()
+            {
+            $.getJSON('https://s3.amazonaws.com/kinlane-productions/json/sponsors.json', function(data) {
+                $.each(data['sponsors'], function(key, val) {
+                var template = $('#parterListingTemplate').html();
+                var html = Mustache.to_html(template, val);
+                $('#partnerListingContainer').append(html);
+                });
+            });
+        	}
+        listSponsors();
+
+        // Feature Projects
+        function featureProjects()
+            {
+            $get_feature_project_url = "https://project.api.kinlane.com/project/feature/";
+          	$.ajax({
+          	  url: $get_feature_project_url,
+          	  type:"GET",
+          	  success:function(data) {
+                	$feature_title = data['feature_title'];
+                  $feature_image = data['feature_image'];
+                  $feature_url = data['feature_url'];
+                  $("#feature_project_link").attr("href", $feature_url);
+                  $("#feature_project_image").attr("src", $feature_image);
+                  $("#feature_project_image").attr("title", $feature_title);
+              	}
+          	});
+            }
+        featureProjects();
+
+        // Footer Projects
+        function footerProjects()
+            {
+            $get_footer_project_url = "https://project.api.kinlane.com/project/footer/";
+
+            $.ajax({
+              url: $get_footer_project_url,
+              type:"GET",
+              success:function(data) {
+                  $footer_title = data['footer_title'];
+                  $footer_image = data['footer_image'];
+                  $footer_url = data['footer_url'];
+                  $("#footer_project_link").attr("href", $footer_url);
+                  $("#footer_project_image").attr("src", $footer_image);
+                  $("#footer_project_image").attr("title", $footer_title);
+                }
+              });
+            }
+        footerProjects();
+
+    </script>
+
+  </body>
+</html>

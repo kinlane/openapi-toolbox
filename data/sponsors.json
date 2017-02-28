@@ -1,0 +1,29 @@
+{
+    "sponsors": [
+       {
+            "title": "3Scale",
+            "tagline": "API Infrastructure",
+            "url": "http://bit.ly/13esk6Q",
+            "logo": "https://s3.amazonaws.com/kinlane-productions/api-service-providers/3Scale/3scale-logo-tr.png",
+            "width": "100%",
+             "paddingbottom": "1"
+        },                                                           
+        {
+            "title": "Restlet",
+            "tagline": "Comprehensive solution for all your RESTful web API needs.",
+            "url": "http://bit.ly/1sgwGpq",
+            "logo": "https://s3.amazonaws.com/kinlane-productions/api-service-providers/api-spark/Logo-Restlet-Horizontal-800x225.png",
+            "width": "75%",
+             "paddingbottom": "1"
+        },                                                           
+        {
+            "title": "WSO2",
+            "tagline": "Open source API tools",
+            "url": "http://bit.ly/17KyhtZ",
+            "logo": "https://s3.amazonaws.com/kinlane-productions/api-service-providers/wso2/wso2-logo-white-400X180-tr.png",
+            "width": "75%",
+             "paddingbottom": "1"
+        }        
+               
+    ]
+}

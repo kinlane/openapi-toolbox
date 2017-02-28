@@ -1,0 +1,119 @@
+---
+layout: default
+title: My Github YAML Editor Micro Tool Base
+---
+
+<script type="text/javascript">
+
+    // Reset the cookie manually
+    //Cookies.expire('token');
+
+    var $oAuthToken = getUrlVar('token');
+    var $yaml_store = "";
+
+    // When you fork, make sure ad add your org / user and repo name to _config.yml
+    var $org = '{{ site.github_user }}';
+    var $repo = '{{ site.github_repo }}';
+
+    if($oAuthToken !='')
+      {
+
+      // Setting a cookie value
+      Cookies.set('token', $oAuthToken);
+
+      // Set with expiration
+      // Cookies.set('token', $oAuthToken, { expires: '01/01/2017' });
+
+      }
+
+    // Grab the token from cookie
+    $oAuthToken = Cookies.get('token');
+
+    if($oAuthToken!='')
+      {
+      // Setup the Github connection
+      var github = new Github({token: $oAuthToken,auth: "oauth"});
+      var repo = github.getRepo($org,$repo);
+
+      // Le'ts try to just get the Github Repo tree
+      repo.getTree('gh-pages?recursive=true', function(err, tree) {
+
+        if(err == null && $oAuthToken != null)
+          {
+            // If no error we have access, read YAML store
+            repo.read('gh-pages', '_data/store.yaml', function(err, data) {
+
+              $yaml_store = jsyaml.load(data);
+
+              $( "#editor" ).append( "<tr><td colspan='2'><hr style='padding: 0px; margin: 0px;'></td></tr>");
+
+              $.each($yaml_store, function($rowKey, $rowEntry) {
+
+                $fieldNumKey = 0;
+                $.each($rowEntry, function($fieldKey, $fieldEntry) {
+                  $( "#editor" ).append( "<tr id='row-" + $rowKey + "' style='padding: 3px 0px 3px 0px;'><td id='row-" + $rowKey + "-" + $fieldNumKey + "' align='right' style='font-weight: bold;'>" + $fieldKey + ":</td><td><input type='text' name='" + $fieldKey + "' id='text-" + $rowKey + "-" + $fieldNumKey + "' value='" + $fieldEntry + "' style='width: 100%;' /></td></tr>" );
+                  $fieldNumKey++;
+                });
+
+                $( "#editor" ).append( "<tr><td colspan='2'><hr style='padding: 0px; margin: 0px;'></td></tr>");
+
+              });
+            });
+          }
+        else
+          {
+          // If error we DO NOT have access
+          alert('We have NO access to API & repo!');
+          }
+
+        });
+
+      }
+
+      function saveYAMLStore()
+        {
+          $('#editor tr').each(function (i, row) {
+            $('#row-' + i + ' td').each(function (j, cell) {
+              $id = 'text-' + i + '-' + j;
+              if(document.getElementById($id))
+                {
+                  $name = document.getElementById($id).name
+                  $value = document.getElementById($id).value;
+                  $yaml_store[i][$name] = $value;
+                }
+            });
+
+          });
+
+          $yaml_dump = jsyaml.dump($yaml_store);
+
+          // Grab the token from cookie
+          $oAuthToken = Cookies.get('token');
+
+          var github = new Github({token: $oAuthToken,auth: "oauth"});
+          var repo = github.getRepo($org,$repo);
+
+          repo.getTree('gh-pages?recursive=true', function(err, tree) {
+
+            $.each(tree, function(treeKey, treeValue) {
+
+              $writepath = '_data/store.yaml';
+              $path = treeValue['path'];
+              $sha = treeValue['sha'];
+              //console.log($path + ' == ' + $writepath);
+              if($path==$writepath)
+                {
+                repo.writemanual('gh-pages',$writepath, $yaml_dump, 'Save', $sha, function(err) { });
+                //console.log("writing " + $writepath);
+                alert("saved " + $writepath);
+                }
+              });
+            });
+
+        }
+
+</script>
+<h1>My Github YAML Editor Micro Tool Base</h1>
+<p align="center">YAML loaded from _data/store.yaml for editing, <a href="/github-micro-tool-yaml/">view by going back to home page</a>.</p>
+<table width="100%" border="0" cellpadding="3" id="editor"></table>
+<center><input type="button" name="SaveYAML" value="Save YAML" onclick="saveYAMLStore();" /></center>

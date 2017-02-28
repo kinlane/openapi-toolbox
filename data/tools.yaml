@@ -1,7 +1,7 @@
 ---
 layout: none
 ---
-{% for tool in site.data.tools %}{
+{% for tool in site.data.tools %}
 - title: {{ tool.title }}
   details: {{ tool.details }}
   url: {{ tool.url }}
@@ -11,4 +11,4 @@ layout: none
   tags: {{ tool.tags }}
   license: {{ tool.license }}
   license_url: {{ tool.license_url }}
-{% endfor %}}
+{% endfor %}

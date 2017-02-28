@@ -364,7 +364,7 @@
   url: 'https://github.com/lucybot/lucy-console'
   image: 'https://s3.amazonaws.com/openapi/lucybot-logo.png'
   orgs: Lucybot
-  type: Dcumentation
+  type: Documentation
   tags: JavaScript
   license: Affero General Public License
   license_url: 'https://github.com/lucybot/lucy-console/blob/static-site/LICENSE'

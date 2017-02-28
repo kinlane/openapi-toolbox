@@ -5,6 +5,7 @@ tag: Editor
 ---
 
 <h1>Editors</h1>
+<p>These are the OpenAPI editors included in the toolbox so far, for editing OpenAPI definitions.</p>
 <table cellpadding="3" cellspacing="2">
 {% for tool in site.data.tools %}
   {% if tool.type contains page.tag %}
@@ -23,3 +24,4 @@ tag: Editor
   {% endif %}
 {% endfor %}
 </table>
+<p>This project is <a href="https://github.com/kinlane/openapi-toolbox">forkable using the Github repository</a>, and <a href="/data/tools.json">accessible as JSON</a>. If you have a tool you think should be added, or there is something that needs fixing, <a href="https://github.com/kinlane/openapi-toolbox/issues">you can submit an issue on the Github repository</a>, or submit a pull request.</p>

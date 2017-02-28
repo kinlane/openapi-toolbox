@@ -57,6 +57,7 @@ title: Update
           $title = service['Title'];
           $description = service['Description'];
           $description = String($description.trim());
+          $description = $description.replace(/[^\x00-\xFF]/g, "");
           $url = service['URL'];
           $image = service['Image'];
           $orgs = service['Orgs'];

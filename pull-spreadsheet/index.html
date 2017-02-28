@@ -1,14 +1,10 @@
 ---
 layout: default
-title: Pull Spreadsheet
+title: Update
 ---
 
 
-<h1>Google Spreadsheet To YAML in Jekyll</h1>
-<p>This is a basic tool that pulls from a <a href="https://docs.google.com/spreadsheets/d/14OsbrDkjnr67J2TMzYO0EiFrixdYbf-UiMJ-HYNJhMI/pubhtml" target="_blank">Google Spreadsheet template</a>, and publish into a Github repository as a YAML to drive some of the Jekyll driven content here on this website.</p>
-<p>For this to work you have to pass in ?token=[<a href="https://github.com/settings/tokens">personal access token</a>], from a Github account that has access to this repository. If you do not have valid token, the YAML will not save, but it will still pull from spreadsheet and display.</p>
-<p>This is just a base component I will use in other micro tools to achieve this basic functionality for allowing YAML driven jekyll sites to be managed by a Google spreadsheet.</p>
-
+<h1>Update</h1>
 <script type="text/javascript">
 
     // Reset the cookie manually
@@ -40,7 +36,7 @@ title: Pull Spreadsheet
     $(document).ready( function() {
       Tabletop.init( { key: key,
                        callback: showInfo,
-                       wanted: [ "Products" ],
+                       wanted: [ "Implementations" ],
                        debug: true } )
     })
 
@@ -54,11 +50,11 @@ title: Pull Spreadsheet
         $("#table_info").append("<p>" + sheet.name + " has " + sheet.column_names.join(", ") + "</p>");
       });
 
-      $product = tabletop.sheets("Products").all();
+      $product = tabletop.sheets("Implementations").all();
 
       $count = 0;
       $total_count = $product.length;
-      $.each( tabletop.sheets("Products").all(), function(i, service) {
+      $.each( tabletop.sheets("Implementations").all(), function(i, service) {
 
           $id = service['ID'];
           $title = service['Title'];

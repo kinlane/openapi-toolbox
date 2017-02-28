@@ -2,8 +2,6 @@
 layout: default
 title: Update
 ---
-
-
 <h1>Update</h1>
 <script type="text/javascript">
 
@@ -56,16 +54,26 @@ title: Update
       $total_count = $product.length;
       $.each( tabletop.sheets("Implementations").all(), function(i, service) {
 
-          $id = service['ID'];
           $title = service['Title'];
           $description = service['Description'];
-          $price = service['Price'];
+          $url = service['URL'];
+          $image = service['Image'];
+          $orgs = service['Orgs'];
+          $type = service['Type'];
+          $tags = service['Tags'];
+          $license = service['License'];
+          $license_url = service['License URL	'];
 
           $p = {};
-          $p['id'] = $id;
           $p['title'] = $title;
           $p['description'] = $description;
-          $p['price'] = $price;
+          $p['url'] = $url;
+          $p['image'] = $image;
+          $p['orgs'] = $orgs;
+          $p['type'] = $type;
+          $p['tags'] = $tags;
+          $p['license'] = $license;
+          $p['license_url'] = $license_url;
           $products.push($p);
           //beautify(jsonStr);
 
@@ -89,7 +97,7 @@ title: Update
 
               $.each(tree, function(treeKey, treeValue) {
 
-                $writepath = '_data/store.yaml';
+                $writepath = '_data/tools.yaml';
                 $path = treeValue['path'];
                 $sha = treeValue['sha'];
                 //console.log($path + ' == ' + $writepath);
@@ -109,4 +117,3 @@ title: Update
 
 </script>
 <textarea cols="10" rows="5" id="source" style="border: 1px solid #000; width: 100%; height: 350px;"></textarea>
-<p>If you have any questions about this work, <a href="https://github.com/api-evangelist-tools/spreadsheet-to-yaml-in-jekyll/issues">submit an issue on the Github repository for the project</a>. or drop me a line at <a href="https://twitter.com/kinlane">@apievangelist</a>.</p>

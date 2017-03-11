@@ -368,3 +368,70 @@
   tags: JavaScript
   license: Affero General Public License
   license_url: 'https://github.com/lucybot/lucy-console/blob/static-site/LICENSE'
+- title: Lufthansa Airlines
+  details: An OpenAPI for the Lufthansa Group AP.
+  url: 'https://github.com/LufthansaOpenAPI/Swagger'
+  image: 'https://s3.amazonaws.com/openapi/lufthansalogo.jpg'
+  orgs: Lufthansa
+  type: OpenAPI
+  tags: Airlines
+  license: None
+  license_url: ''
+- title: Swagger WCF
+  details: Generates Swagger (2.0) for WCF services and also provides swagger-ui.
+  url: 'https://github.com/abelsilva/swaggerwcf'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Abel Silva
+  type: Generator
+  tags: '.NET, WF'
+  license: Apache 2.0
+  license_url: 'https://github.com/abelsilva/swaggerwcf/blob/master/LICENSE'
+- title: Swashbuckle.AspNetCore
+  details: >-
+    Swagger tooling for API's built with ASP.NET Core. Generate beautiful API
+    documentation, including a UI to explore and test operations, directly from
+    your routes, controllers and models.
+  url: 'https://github.com/domaindrivendev/Swashbuckle.AspNetCore'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Domain Driven Dev
+  type: 'Generator, Testing'
+  tags: .NET
+  license: MIT
+  license_url: >-
+    https://github.com/domaindrivendev/Swashbuckle.AspNetCore/blob/master/LICENSE
+- title: Tavis.OpenAPI
+  details: >-
+    This library is a parser for the OpenAPI Specification. The model is based
+    around OpenAPI 3.0 specification.
+  url: 'https://github.com/tavis-software/Tavis.OpenApi/'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Tavis Software
+  type: Parser
+  tags: .NET
+  license: Apache 2.0
+  license_url: 'https://github.com/tavis-software/Tavis.OpenApi/blob/master/License.txt'
+- title: Swashbuckle.AspNetCore
+  details: >-
+    Seamlessly adds a Swagger to WebApi projects! Combines ApiExplorer and
+    Swagger/swagger-ui to provide a rich discovery, documentation and playground
+    experience to your API consumers.
+  url: 'https://github.com/domaindrivendev/Swashbuckle'
+  image: 'https://s3.amazonaws.com/openapi/github-logo.png'
+  orgs: Domain Driven Dev
+  type: Generator
+  tags: .NET
+  license: BSD
+  license_url: 'https://github.com/domaindrivendev/Swashbuckle/blob/master/LICENSE'
+- title: Gnostic
+  details: >-
+    Go command line tool which reads OpenAPI descriptions in JSON or YAML
+    formats and writes equivalent Protocol Buffer representations. Protocol
+    Buffers are a language-neutral, platform-neutral extensible mechanism for
+    serializing structured data.
+  url: 'https://github.com/googleapis/gnostic'
+  image: 'https://s3.amazonaws.com/openapi/google-g-googleaps.png'
+  orgs: Google
+  type: Generator
+  tags: 'gRPC, Protocol Buffer, '
+  license: Apache 2.0
+  license_url: 'https://github.com/googleapis/gnostic/blob/master/LICENSE'

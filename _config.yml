@@ -1,7 +1,7 @@
 title:        OpenAPI Toolbox
 description:  This is an OpenAPI toolbox.
 url:          http://openapi.toolbox.apievangelist.com
-
+raw_url:      https://raw.githubusercontent.com/kinlane/openapi-toolbox/master/_data/
 version:      1.1.1
 
 author:

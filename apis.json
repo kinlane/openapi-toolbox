@@ -1,4 +1,4 @@
 ---
 layout: none
 ---
-{% assign show_json = yaml_data | json | replace: '=>', ':' %}{{ show_json }}
+{% assign show_json = site.data.apis | json | replace: '=>', ':' %}{{ show_json }}

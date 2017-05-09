@@ -435,12 +435,47 @@
   tags: 'gRPC, Protocol Buffer, '
   license: Apache 2.0
   license_url: 'https://github.com/googleapis/gnostic/blob/master/LICENSE'
-- title: test
-  details: test
-  url: test
-  image: test
-  orgs: New York Times
-  type: testing
-  tags: test
-  license: test
-  license_url: test
+- title: x-ms-summary
+  details: Title of the entity.
+  url: 'https://flow.microsoft.com/en-us/documentation/customapi-how-to-swagger/'
+  image: >-
+    http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/ms_flow_icon.jpg
+  orgs: Microsoft Flow
+  type: Vendor Extension
+  tags: iPaaS
+  license: ''
+  license_url: ''
+- title: x-ms-visibility
+  details: Determines the user facing visibility of the entity.
+  url: 'https://flow.microsoft.com/en-us/documentation/customapi-how-to-swagger/'
+  image: >-
+    http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/ms_flow_icon.jpg
+  orgs: Microsoft Flow
+  type: Vendor Extension
+  tags: iPaaS
+  license: ''
+  license_url: ''
+- title: x-ms-dynamicvalues
+  details: >-
+    Enables populating a dropdown for collecting input parameters to an
+    operation.
+  url: 'https://flow.microsoft.com/en-us/documentation/customapi-how-to-swagger/'
+  image: >-
+    http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/ms_flow_icon.jpg
+  orgs: Microsoft Flow
+  type: Vendor Extension
+  tags: iPaaS
+  license: ''
+  license_url: ''
+- title: x-ms-dynamic-schema
+  details: >-
+    This is a hint to the flow designer that the schema for this parameter or
+    response is dynamic in nature.
+  url: 'https://flow.microsoft.com/en-us/documentation/customapi-how-to-swagger/'
+  image: >-
+    http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/ms_flow_icon.jpg
+  orgs: Microsoft Flow
+  type: Vendor Extension
+  tags: iPaaS
+  license: ''
+  license_url: ''

@@ -1,6 +1,6 @@
-{% assign yaml_data = site.data.tools %}
 {% assign filtered_data = '' %}
-{% for tool in yaml_data %}
+{% for tool in site.data.tools %}
+{{ tool.type }} contains {{ page.tag }}<br />
   {% if tool.type contains page.tag %}
     {% assign filtered_data = filtered_data | concat: tool %}
   {% endif %}

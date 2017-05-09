@@ -6,11 +6,11 @@ info:
 host: openapi.toolbox.apievangelist.com
 basePath: /apis
 schemes:
-- http
+  - http
 produces:
-- application/json
+  - application/json
 consumes:
-- application/json
+  - application/json
 paths:
   /tools.json:
     get:
@@ -24,8 +24,8 @@ paths:
             items:
               $ref: '#/definitions/tool'
       tags:
-      - Tools
-      - OpenAPI
+        - Tools
+        - OpenAPI
 definitions:
   tool:
     properties:
@@ -42,7 +42,7 @@ definitions:
         description: An image to represent the tool.
         type: string
       orgs:
-        description: The organization / entity behind the tool.
+        description: The organization or entity behind the tool.
         type: string
       type:
         description: The type of tool.

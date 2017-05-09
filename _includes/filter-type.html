@@ -1,5 +1,5 @@
 {% assign yaml_data = site.data.tools %}
-{% assign filtered_data = site.data.tools %}
+{% assign filtered_data = '' %}
 {% for tool in yaml_data %}
   {% if tool.type contains page.tag %}
     {% assign filtered_data = filtered_data | concat: tool %}

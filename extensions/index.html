@@ -9,7 +9,7 @@ tag: Extensions
   <a href="/data/tools.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-json-file.png" align="right" width="40" /></a>
   <a href="/data/tools.yaml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-yaml-file.png" align="right" width="40" /></a>
 </p>
-<p>These are the OpenAPI editors included in the toolbox so far, for editing OpenAPI definitions.</p>
+<p>These are the OpenAPI extensions included in the toolbox so far, for extending the OpenAPI specification as part of specific implementations.</p>
 <table cellpadding="3" cellspacing="2">
 {% for tool in site.data.tools %}
   {% if tool.type contains page.tag %}
@@ -20,7 +20,9 @@ tag: Extensions
         {{ tool.details }}</p>
         <ul>
           <li><strong>URL:</strong> <a href="{{ tool.url }}" target="_blank">Visit</a></li>
+          {% if tool.license_url != '' %}
           <li><strong>License:</strong> <a href="{{ tool.license_url }}" target="_blank">{{ tool.license }}</a></li>
+          {% endif %}
         </ul>
         <hr style="width: 75%; text-align:left;" />
       </td>

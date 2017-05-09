@@ -1,4 +1,4 @@
-agger: "2.0"
+Swagger: "2.0"
 info:
   title: OpenAPI Toolbox API
   description: Machine readable access to the code and definitions in the OpenAPI Toolbox.
@@ -15,7 +15,7 @@ paths:
   /tools.json:
     get:
       summary: Get Tools
-      description: Returns al the tools in the toolbox.
+      description: Returns all the tools in the toolbox.
       responses:
         200:
           description: Successful Response

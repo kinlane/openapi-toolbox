@@ -5,5 +5,5 @@
     {% assign filtered_data = filtered_data | concat: tool %}
   {% endif %}
 {% endfor %}
-{% assign show_json = filtered_data | json | replace: '=>', ':' %}
-{{ show_json }}
+{% assign publish_json = filtered_data | json | replace: '=>', ':' %}
+--{{ publish_json }}--

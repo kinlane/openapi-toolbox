@@ -1,0 +1,58 @@
+agger: "2.0"
+info:
+  title: OpenAPI Toolbox API
+  description: Machine readable access to the code and definitions in the OpenAPI Toolbox.
+  version: 1.0.0
+host: openapi.toolbox.apievangelist.com
+basePath: /apis
+schemes:
+- http
+produces:
+- application/json
+consumes:
+- application/json
+paths:
+  /tools.json:
+    get:
+      summary: Get Tools
+      description: Returns al the tools in the toolbox.
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tool'
+      tags:
+      - Tools
+      - OpenAPI
+definitions:
+  tool:
+    properties:
+      title:
+        description: The title of the tool.
+        type: string
+      details:
+        description: The details for the tool.
+        type: string
+      url:
+        description: A URL to find more information on tool.
+        type: string
+      image:
+        description: An image to represent the tool.
+        type: string
+      orgs:
+        description: The organization / entity behind the tool.
+        type: string
+      type:
+        description: The type of tool.
+        type: string
+      tags:
+        description: Comma separated list of tags applying to tool.
+        type: string
+      license:
+        description: The license name for the tool.
+        type: string
+      license_url:
+        description: The url for the tool license.
+        type: string

@@ -479,3 +479,40 @@
   tags: iPaaS
   license: ''
   license_url: ''
+- title: x-codegen-settings
+  details: >-
+    These settings are globally applicable to all operations and schema
+    definitions.
+  url: >-
+    https://apimatic.io/blog/post/swagger-2-0-extension-for-code-generation-settings
+  image: >-
+    http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/apimatic_logo.png
+  orgs: APIMATIC
+  type: Extensions
+  tags: SDK
+  license: ''
+  license_url: ''
+- title: x-operation-settings
+  details: These settings can be specified inside an "operation" object.
+  url: >-
+    https://apimatic.io/blog/post/swagger-2-0-extension-for-code-generation-settings
+  image: >-
+    http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/apimatic_logo.png
+  orgs: APIMATIC
+  type: Extensions
+  tags: SDK
+  license: ''
+  license_url: ''
+- title: x-additional-headers
+  details: >-
+    These headers are in addition to any headers required for authentication or
+    defined as parameters.
+  url: >-
+    https://apimatic.io/blog/post/swagger-2-0-extension-for-code-generation-settings
+  image: >-
+    http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/apimatic_logo.png
+  orgs: APIMATIC
+  type: Extensions
+  tags: SDK
+  license: ''
+  license_url: ''

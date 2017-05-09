@@ -441,7 +441,7 @@
   image: >-
     http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/ms_flow_icon.jpg
   orgs: Microsoft Flow
-  type: Vendor Extension
+  type: Extensions
   tags: iPaaS
   license: ''
   license_url: ''
@@ -451,7 +451,7 @@
   image: >-
     http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/ms_flow_icon.jpg
   orgs: Microsoft Flow
-  type: Vendor Extension
+  type: Extensions
   tags: iPaaS
   license: ''
   license_url: ''
@@ -463,7 +463,7 @@
   image: >-
     http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/ms_flow_icon.jpg
   orgs: Microsoft Flow
-  type: Vendor Extension
+  type: Extensions
   tags: iPaaS
   license: ''
   license_url: ''
@@ -475,7 +475,7 @@
   image: >-
     http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/ms_flow_icon.jpg
   orgs: Microsoft Flow
-  type: Vendor Extension
+  type: Extensions
   tags: iPaaS
   license: ''
   license_url: ''

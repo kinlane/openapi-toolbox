@@ -12,7 +12,7 @@ produces:
 consumes:
   - application/json
 paths:
-  /tools.json:
+  /tools:
     get:
       summary: Get Tools
       description: Returns all the tools in the toolbox.

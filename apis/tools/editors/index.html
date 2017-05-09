@@ -3,12 +3,4 @@ layout: none
 title: Editors
 tag: Editor
 ---
-{% assign yaml_data = site.data.tools %}
-{% assign filtered_data = site.data.tools %}
-{% for tool in site.data.tools %}
-  {% if tool.type contains page.tag %}
-    {% assign filtered_data = filtered_data | concat: tool %}
-  {% endif %}
-{% endfor %}
-{% assign show_json = filtered_data | json | replace: '=>', ':' %}
-{{ show_json }}
+{% include filter-type.html %}

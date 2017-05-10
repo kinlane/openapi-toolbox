@@ -183,7 +183,7 @@ layout: default
                               {% assign api_host = openapi_spec_json.host %}
                               {% assign api_base = openapi_spec_json.basePath %}
 
-                              {% assign api_url = api_host | prepend:'https://' %}
+                              {% assign api_url = api_host | prepend:'http://' %}
                               {% assign api_url = api_url | append:api_base %}
 
                               {% for path in openapi_spec_json.paths %}
@@ -366,7 +366,7 @@ layout: default
                                     {% endif %}
 
                                   {% endfor %}
-      
+
                               {% endfor %}
                             {% endfor %}
 

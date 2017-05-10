@@ -6,6 +6,6 @@
   {% endif %}
 {% endfor %}
 
-{% assign filtered_data = '[' | append: filtered_data  | append: ']' %}
-
+{% assign filtered_data = '[' | append: filtered_data  | append: ']' | replace: ',]', ']' %}
+{% assign publish_json = filtered_data | json | replace: '=>', ':' %}
 {{ filtered_data }}

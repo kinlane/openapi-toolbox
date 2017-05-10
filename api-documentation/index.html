@@ -149,7 +149,7 @@ layout: default
                     </tr>
                     <tr id="methods-for-{{ pathname }}">
                       <td colspan="2">
--- {{ openapi_spec_json }} --
+
                         <table width="95%" border="0" style="margin-left: 15px;">
                           {% assign taglist = '' %}
 
@@ -157,6 +157,7 @@ layout: default
                             {% for path in spec.paths %}
 
                               {% assign this_path = path[0] %}
+                              path: {{ this_path}} <br />
                               {% assign method_json = path[1] %}
 
                               {% for method in method_json %}

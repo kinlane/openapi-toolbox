@@ -1,0 +1,574 @@
+---
+layout: page
+---
+<script type="text/javascript">
+
+  function showme($id)
+    {
+    if(document.getElementById($id).style.display=='none')
+      {
+      document.getElementById($id).style.display = '';
+      }
+    else
+      {
+      document.getElementById($id).style.display = 'none';
+      }
+    }
+
+   function getRequest($slug,$path,$url)
+    {
+
+    $api_url = $url + $path;
+
+    document.getElementById($slug+'-loading').style.display = '';
+
+    console.log('headers:');
+    var elements = document.getElementById($slug+'-headers').elements;
+    $headers = '';
+    for (var i = 0, element; element = elements[i++];) {
+        if (element.type === "text")
+          {
+          console.log(element.type + ' - ' + element.name);
+          $headers = $headers + element.name + ': ' + element.value + ',';
+        }
+      }
+    $headers = $headers.substring(1, $headers.length-1);
+
+    var path_elements = document.getElementById($slug+'-path').elements;
+    for(var i = 0, element; element = path_elements[i++];)
+      {
+        if(element.type === "text")
+          {
+          if(element.value!='')
+            {
+            $replace_string = '{' + element.name + '}';
+            $api_url = $api_url.replace($replace_string,element.value);
+            }
+          }
+        }
+
+
+    var param_elements = document.getElementById($slug+'-parameters').elements;
+    $anyparams = 0;
+    $query_string = '';
+    for(var i = 0, element; element = param_elements[i++];)
+      {
+        if(element.type === "text")
+          {
+          if(element.value!='')
+            {
+            $query_string = $query_string + element.name + '=' + element.value;
+            $anyparams = 1;
+            }
+          }
+        }
+
+    if(elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
+
+    console.log("loading: " + $api_url);
+
+    var response = $.ajax({
+       url: $api_url,
+       method: "get",
+       headers: {$headers},
+       success:function(response){
+
+          document.getElementById($slug+'-loading').style.display = 'none';
+
+          $viewer = JSON.stringify(response, null, 2);
+          //console.log($viewer);
+          document.getElementById($slug+'-response').value = $viewer;
+          document.getElementById($slug+'-response').style.width = "100%";
+          document.getElementById($slug+'-response').style.height = "450px";
+
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            document.getElementById($slug+'-loading').style.display = 'none';
+            $message = "Status: " + textStatus + "\nError: " + errorThrown;
+            document.getElementById($slug+'-response').value = $$message;
+            document.getElementById($slug+'-response').style.width = "100%";
+            document.getElementById($slug+'-response').style.height = "50px";
+        }
+      });
+
+    }
+</script>
+<table cellpadding="3" cellspacing="2" width="100%" border="0" style="margin-top: 0px;">
+
+{% assign index = site.data.apis %}
+{% assign apijson = index[0] %}
+{% assign contents = site.data.api-commons %}
+{% assign apicommons = contents %}
+
+{% assign filter_name = '' %}
+
+{% assign blog_url = '' %}
+{% assign blogrss_url = '' %}
+{% assign portal_url = '' %}
+{% assign gitub_url = '' %}
+{% assign twitter_url = '' %}
+{% assign website_url = '' %}
+
+{% assign definitions = apijson.definitions %}
+{{ definitions }}
+{% for common in apijson.x-common %}
+
+  {% if common.type == 'x-getting-started' %}
+    {% assign getting_started_url = common.url %}
+  {% endif %}
+  {% if common.type == 'x-authentication-overview' %}
+    {% assign authentication_url = common.url %}
+  {% endif %}
+  {% if common.type == 'x-faq' %}
+    {% assign faq_url = common.url %}
+  {% endif %}
+  {% if common.type == 'x-login' %}
+    {% assign login_url = common.url %}
+  {% endif %}
+  {% if common.type == 'x-selfservice-registration' %}
+    {% assign signup_url = common.url %}
+  {% endif %}
+
+  {% if common.type == 'x-documentation' %}
+    {% assign documentation_url = common.url %}
+  {% endif %}
+
+  {% if common.type == 'x-code-page' %}
+    {% assign code_page_url = common.url %}
+  {% endif %}
+
+  {% if common.type == 'x-road-map' %}
+    {% assign road_map_url = common.url %}
+  {% endif %}
+  {% if common.type == 'x-issues' %}
+    {% assign issue_url = common.url %}
+  {% endif %}
+  {% if common.type == 'x-change-log' %}
+    {% assign change_log_url = common.url %}
+  {% endif %}
+  {% if common.type == 'x-status' %}
+    {% assign status_dashboard_url = common.url %}
+  {% endif %}
+
+  {% if common.type == 'x-support' %}
+    {% assign support_url = common.url %}
+  {% endif %}
+
+  {% if common.type == 'x-api-plan' %}
+    {% assign api_plan_url = common.url %}
+  {% endif %}
+  {% if common.type == 'x-rate-limit' %}
+    {% assign rate_limit_url = common.url %}
+  {% endif %}
+
+{% endfor %}
+
+  <tr>
+    <td>
+        <span style="font-size: 22px;"><strong>API Documentation</strong></span>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 10px;">
+      {{ apijson.description }}
+    </td>
+  </tr>
+  <!--<tr>
+    <td align="center" style="padding-bottom: 5px;">
+        (<a href="learn-the-basics/" style="font-size: 14px;">Learn The Basics</a>)
+        (<a href="services-summary/" style="font-size: 14px;">Services Summary</a>)
+    </td>
+  </tr>-->
+  <tr>
+    <td>
+      <table width="100%" border="0" style="padding-top: 10px;">
+        <tr>
+        <td align="center" style="margin-left: 90px; margin-right: 90px;">
+
+            {% assign api_action_url = '' %}
+            {% assign numberofapis = apijson.apis | size %}
+
+                {% assign api_action_url = '' %}
+                {% for api in apijson.apis %}
+
+                <table cellpadding="3" cellspacing="2" width="100%" border="0">
+
+                    {% assign api_action_spec = '' %}
+                    {% assign api_action_url = '' %}
+                    {% assign openapi_spec_json = '' %}
+
+                    {% for property in api.properties %}
+
+                      {% assign thisname = apijson.name | downcase %}
+                      {% assign thisname = thisname | append:'/' %}
+                      {% assign thisname = thisname | replace: ' ','-' %}
+
+                      {% if property.type == 'x-json-schema' %}
+                        {% assign json_schema_url = property.url %}
+                      {% endif %}
+
+                      {% if property.type == 'x-openapi' %}
+                        {% assign openapi_spec_url = property.url %}
+                        {% assign openapi_spec_json = site.data.api-commons.openapi %}
+                      {% endif %}
+
+                      {% if property.type == 'x-postman %}
+                        {% assign postman_url = property.url %}
+                      {% endif %}
+
+                      {% if property.type == 'x-api-blueprint' %}
+                        {% assign api_blueprint_url = property.url %}
+                      {% endif %}
+
+                      {% if property.type == 'x-api-actions' %}
+                        {% assign api_action_url = property.url %}
+                      {% endif %}
+
+                      {% if property.type == 'x-api-filters' %}
+
+                        {% assign api_filters_url = property.url %}
+                        {% assign api_filter_path = api_filters_url | replace: '_data/api-commons/','' %}
+                        {% assign api_filter_path = api_filter_path | replace: '.yaml','' %}
+                        {% assign api_filter_path = api_filter_path | replace: '.json','' %}
+                        {% assign api_filter_path = api_filter_path | replace: '/','.' %}
+                        {% assign api_filter_path = api_filter_path | replace: 'api-commons.','' %}
+
+                        {% for entry in apicommons %}
+                          {% assign thisname = entry[0] %}
+                          {% assign thisentry = entry[1] %}
+                          {% if thisname == api_filter_path %}
+                            {% assign api_filters = thisentry %}
+                          {% endif %}
+                        {% endfor %}
+
+                      {% endif %}
+
+                    {% endfor %}
+
+                    {% if filter_name != null and filter_name != empty %}
+                      <tr>
+                        <td align="center" colspan="2" style="font-size: 18px; font-weight: bold; padding: 10px;">
+                          {{ filter_name }}
+                        </td>
+                      </tr>
+                    {% endif %}
+
+                    <tr style="background-color: #D3D3D3;">
+                      <td align="left" style="font-size: 18px; font-weight: bold; padding: 10px;">
+                        {{ api.name }}
+                      </td>
+                      <td align="right" style="padding: 10px;">
+                          <strong>OpenAPI:</strong>
+                          (<a href="https://raw.githubusercontent.com/{{ site.github_org }}/{{ site.github_repo }}/master/_data/api-commons/openapi.yaml" target="_blank" title="YAML OpenAPI" style="font-size: 16px; font-weight: normal;">YAML</a>)
+                          (<a href="{{ site.url }}data/openapi.json" target="_blank" title="View OpenAPI Spec" style="font-size: 16px; font-weight: normal;">JSON</a>)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" colspan="2" style="padding: 10px;"><strong>base url:</strong> {{ api.baseURL }}</td>
+                    </tr>
+                    <tr id="methods-for-{{ pathname }}">
+                      <td colspan="2">
+
+                        <table width="95%" border="0" style="margin-left: 15px;">
+                          {% assign taglist = '' %}
+                          {% for spec in openapi_spec_json %}
+                            {% for path in spec.paths %}
+
+                              {% assign this_path = path[0] %}
+                              {% assign method_json = path[1] %}
+
+                              {% assign filter_path = 1 %}
+                              {% for filter in api_filters %}
+                                {% assign this_filter_name = filter.name %}
+                                {% if this_filter_name == filter_name %}
+                                  {% for show in filter.filters %}
+                                    {% if this_path == show.path %}
+                                      {% assign filter_path = 0 %}
+                                    {% endif %}
+                                  {% endfor %}
+                                {% endif %}
+                              {% endfor %}
+
+                              {% if filter_name == '' %}
+                                {% assign filter_path = 0 %}
+                              {% endif %}
+
+                              {% if filter_path == 0 %}
+                                {% for method in method_json %}
+                                  {% assign tagarray = method[1].tags %}
+                                  {% assign tag = tagarray[0] %}
+                                  {% if taglist contains tag %}
+                                  {% else %}
+                                    {% assign taglist = taglist | append:',' %}
+                                    {% assign taglist = taglist | append:tag %}
+                                  {% endif %}
+                                {% endfor %}
+                              {% endif %}
+
+                            {% endfor %}
+                          {% endfor %}
+
+                          {% assign tagArray = taglist | split: "," %}
+                          {% for grouptag in tagArray %}
+
+                            <tr>
+                              <td colspan="5" style="padding-top: 10px;"><strong>{{ grouptag }}</strong></td>
+                            </tr>
+
+                            {% for spec in openapi_spec_json %}
+
+                              {% assign api_title = spec.info.title %}
+                              {% assign api_description = spec.info.description %}
+
+                              {% assign api_host = spec.host %}
+                              {% assign api_base = spec.basePath %}
+
+                              {% assign api_url = api_host | prepend:'https://' %}
+                              {% assign api_url = api_url | append:api_base %}
+
+                              {% for path in spec.paths %}
+
+                                {% assign this_path = path[0] %}
+                                {% assign method_json = path[1] %}
+
+                                {% assign filter_path = 1 %}
+                                {% for filter in api_filters %}
+                                  {% assign this_filter_name = filter.name %}
+                                  {% if this_filter_name == filter_name %}
+                                    {% for show in filter.filters %}
+                                      {% if this_path == show.path %}
+                                        {% assign filter_path = 0 %}
+                                      {% endif %}
+                                    {% endfor %}
+                                  {% endif %}
+                                {% endfor %}
+
+                                {% if filter_name == '' %}
+                                  {% assign filter_path = 0 %}
+                                {% endif %}
+
+                                {% if filter_path == 0 %}
+                                  {% for method in method_json %}
+
+                                    {% assign parameters = method[1].parameters %}
+
+                                    {% assign tagarray = method[1].tags %}
+                                    {% assign tag = tagarray[0] %}
+
+                                    {% assign verb = method[0] | upcase %}
+
+                                    {% if verb == 'GET' %}
+                                      {% assign back_color = site.get_color %}
+                                    {% endif %}
+                                    {% if verb == 'POST' %}
+                                      {% assign back_color = site.post_color %}
+                                    {% endif %}
+                                    {% if verb == 'PUT' %}
+                                      {% assign back_color = site.put_color %}
+                                    {% endif %}
+                                    {% if verb == 'DELETE' %}
+                                      {% assign back_color = site.delete_color %}
+                                    {% endif %}
+
+                                    {% assign summary = method[1].summary %}
+
+                                    {% if tag == grouptag %}
+
+                                      {% assign slug = path[0] | replace: '/','' %}
+
+                                      <tr>
+                                        <td style="padding-left: 20px; font-size: 12px;">{{ summary }}</td>
+                                        <td style="font-size: 12px;">{{ path[0] }}</td>
+                                        <td align="center" style="padding: 1px; width: 75px; background-color:#{{ back_color }}; font-weight: bold; font-size: 11px; color: #FFF;">
+                                          {{ verb }}
+                                        </td>
+                                        <td style="width: 25px;"></td>
+                                        <td><button type="button" class="btn btn-default" onclick="showme('{{ slug }}-row'); return false;">Try</button></tr>
+                                      </tr>
+                                      <tr id="{{ slug }}-row" style="display: none;">
+                                        <td colspan="4" style="padding: 15px;">
+
+                                          <table width="90%" border="0" align="center">
+
+                                            <form id="{{ slug }}-headers">
+                                            <!-- Begin Headers -->
+                                            {% assign number_of_parameters = parameters | size %}
+
+                                            {% if number_of_parameters > 0 %}
+
+                                              {% assign any_headers = 0 %}
+                                              {% for parameter in parameters %}
+                                                {% if parameter.in == 'header' %}
+                                                  {% assign any_headers = 1 %}
+                                                {% endif %}
+                                              {% endfor %}
+
+                                              <!-- If there are any headers -->
+                                              {% if any_headers > 0 %}
+                                                <tr style="background-color: #CCC;">
+                                                  <td style="font-size: 12px; padding: 5px;"><strong>Headers:</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td align="left" style="font-size: 12px; padding: 10px;">
+                                                      <table style="width: 50%;">
+                                                        {% for parameter in parameters %}
+                                                          {% if parameter.in == 'header' %}
+                                                            <tr>
+                                                              <td style="width: 35%;" align="right"><strong>{{ parameter.name }}:</strong></td>
+                                                              <td><input type="text" name="{{ parameter.name }}" value="" style="width: 100%;" /></td>
+                                                            </tr>
+                                                          {% endif %}
+                                                        {% endfor %}
+                                                      </table>
+                                                  </td>
+                                                </tr>
+                                              {% endif %}
+                                            {% endif %}
+                                            <!-- End Headers -->
+                                            </form>
+
+                                            <form id="{{ slug }}-path">
+                                            <!-- Begin Path Parameters -->
+                                            {% assign number_of_parameters = parameters | size %}
+                                            {% if number_of_parameters > 0 %}
+
+                                              {% assign any_path_parameters = 0 %}
+                                              {% for parameter in parameters %}
+                                                {% if parameter.in == 'path' %}
+                                                  {% assign any_path_parameters = 1 %}
+                                                {% endif %}
+                                              {% endfor %}
+
+                                              <!-- If there are any headers -->
+                                              {% if any_path_parameters > 0 %}
+                                                <tr style="background-color: #CCC;">
+                                                  <td style="font-size: 12px; padding: 5px;"><strong>Path Parameters:</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td align="left" style="font-size: 12px; padding: 10px;">
+                                                      <table style="width: 50%;">
+                                                        {% for parameter in parameters %}
+                                                          {% if parameter.in == 'path' %}
+                                                            <tr>
+                                                              <td style="width: 35%;" align="right"><strong>{{ parameter.name }}:</strong></td>
+                                                              <td><input type="text" name="{{ parameter.name }}" value="" style="width: 100%;" /></td>
+                                                            </tr>
+                                                          {% endif %}
+                                                        {% endfor %}
+                                                      </table>
+                                                  </td>
+                                                </tr>
+                                              {% endif %}
+                                            {% endif %}
+                                            <!-- End Path Parameters -->
+                                            </form>
+
+                                            <form id="{{ slug }}-parameters">
+                                            <!-- Begin Parameters -->
+                                            {% assign number_of_parameters = parameters | size %}
+                                            {% if number_of_parameters > 0 %}
+
+                                              {% assign any_parameters = 0 %}
+                                              {% for parameter in parameters %}
+                                                {% if parameter.in == 'query' %}
+                                                  {% assign any_parameters = 1 %}
+                                                {% endif %}
+                                              {% endfor %}
+
+                                              <!-- If there are any headers -->
+                                              {% if any_parameters > 0 %}
+                                                <tr style="background-color: #CCC;">
+                                                  <td style="font-size: 12px; padding: 5px;"><strong>Parameters:</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td align="left" style="font-size: 12px; padding: 10px;">
+                                                      <table style="width: 50%;">
+                                                        {% for parameter in parameters %}
+                                                          {% if parameter.in == 'query' %}
+                                                            <tr>
+                                                              <td style="width: 35%;" align="right"><strong>{{ parameter.name }}:</strong></td>
+                                                              <td><input type="text" name="{{ parameter.name }}" value="" style="width: 100%;" /></td>
+                                                            </tr>
+                                                          {% endif %}
+                                                        {% endfor %}
+                                                      </table>
+                                                  </td>
+                                                </tr>
+                                              {% endif %}
+                                            {% endif %}
+                                            <!-- End Parameters -->
+                                            </form>
+
+                                            <tr style="background-color: #CCC;">
+                                              <td style="font-size: 12px; padding: 5px;"><strong>Response:</strong></td>
+                                            </tr>
+                                            <tr>
+                                              <td style="font-size: 12px; padding: 10px;">
+                                                <textarea id="{{ slug }}-response" style="overflow: auto; height: 5px; width: 100%; border: 0px solid #FFF;"></textarea>
+                                              </td>
+                                            </tr>
+                                            <tr id="{{ slug }}-loading" style="display: none;">
+                                              <td align="center">
+                                                <img src="http://miami.open.211.adopta.agency/images/loading.gif" />
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td align="center"s tyle="font-size: 12px; padding: 25px;">
+                                                <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}');">Make API Request</button>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    {% endif %}
+
+                                  {% endfor %}
+                                {% endif %}
+
+
+                              {% endfor %}
+                            {% endfor %}
+
+                          {% endfor %}
+
+                        <tr style="margin: 5px;">
+                          <td colspan="5"><a name="definitions"></a><br /><br /></td>
+                        </tr>
+                        <tr style="background-color: #D3D3D3;">
+                          <td align="left" style="font-size: 18px; font-weight: bold; padding: 10px;">Definitions</td>
+                          <td colspan="5" align="right" style="padding: 10px;">
+                            {% if json_schema_url != null and json_schema_url != empty %}
+                              <a href="{{ site.url }}{{ json_schema_url }}" target="_blank" title="View JSON Schema" style="font-size: 16px; font-weight: normal;">JSON Schema</a>
+                            {% endif %}
+                          </td>
+                        </tr>
+                        {% assign taglist = '' %}
+                        {% for spec in openapi_spec_json %}
+                          {% for definition in spec.definitions %}
+                            {% assign definition_name = definition[0] %}
+                            {% assign fields = definition[1] %}
+                            <tr>
+                              <td style="padding: 0px 25px 0px 25px;" colspan='5'>
+                                <strong>{{ definition_name }}</strong>
+                                <ul style='padding-left: 50px;'>
+                                  {% for property in fields.properties %}
+                                    {% assign property_name = property[0] %}
+                                    <li><strong>{{ property_name }}</strong> (<em>{{ property[1]["type"] }}</em>) - {{ property[1]["description"] }}</li>
+                                  {% endfor %}
+                                </ul>
+                              </td>
+                            </tr>
+                          {% endfor %}
+                        {% endfor %}
+
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                {% endfor %}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>

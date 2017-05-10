@@ -26,6 +26,171 @@ paths:
       tags:
         - Tools
         - OpenAPI
+  /tools/clients:
+    get:
+      summary: Get All Client Tools
+      description: Returns all the client tools in the toolbox.
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tool'
+      tags:
+        - Tools
+        - OpenAPI
+        - Clients
+  /tools/documentation:
+    get:
+      summary: Get Documentation Tools
+      description: Returns all the documentation tools in the toolbox.
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tool'
+      tags:
+        - Tools
+        - OpenAPI
+        - Documentation
+  /tools/editors/:
+    get:
+      summary: Get Editor Tools
+      description: Returns all the editor tools in the toolbox.
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tool'
+      tags:
+        - Tools
+        - OpenAPI
+        - Editors
+  /tools/generators/:
+    get:
+      summary: Get Generator Tools
+      description: Returns all the generator tools in the toolbox.
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tool'
+      tags:
+        - Tools
+        - OpenAPI
+        - Generators
+  /tools/java:
+    get:
+      summary: Get Java Tools
+      description: Returns all the Java tools in the toolbox.
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tool'
+      tags:
+        - Tools
+        - OpenAPI
+        - Java
+  /tools/javascript/:
+    get:
+      summary: Get JavaScript Tools
+      description: Returns all the JavaScript tools in the toolbox.
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tool'
+      tags:
+        - Tools
+        - OpenAPI
+        - JavaScript
+  /tools/nodejs/:
+    get:
+      summary: Get Node.js Tools
+      description: Returns all the Node.js tools in the toolbox.
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tool'
+      tags:
+        - Tools
+        - OpenAPI
+        - Node.js
+  /tools/php/:
+    get:
+      summary: Get PHP Tools
+      description: Returns all the PHP tools in the toolbox.
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tool'
+      tags:
+        - Tools
+        - OpenAPI
+        - PHP
+  /tools/python/:
+    get:
+      summary: Get Python Tools
+      description: Returns all the Python tools in the toolbox.
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tool'
+      tags:
+        - Tools
+        - OpenAPI
+        - Python
+  /tools/ruby/:
+    get:
+      summary: Get Ruby Tools
+      description: Returns all the ruby tools in the toolbox.
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tool'
+      tags:
+        - Tools
+        - OpenAPI
+        - Ruby
+  /tools/servers/:
+    get:
+      summary: Get Server Tools
+      description: Returns all the server tools in the toolbox.
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tool'
+      tags:
+        - Tools
+        - OpenAPI
+        - Servers
 definitions:
   tool:
     properties:

@@ -26,7 +26,7 @@ apis:
       - Servers
       - Clients
     properties:
-      - type: x-openapi-spec
+      - type: x-openapi
         url: https://raw.githubusercontent.com/kinlane/openapi-toolbox/master/_data/openapi.yaml
 include: []
 maintainers:

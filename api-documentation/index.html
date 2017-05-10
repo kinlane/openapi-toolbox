@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 ---
 <script type="text/javascript">
 
@@ -97,71 +97,7 @@ layout: page
 
 {% assign index = site.data.apis %}
 {% assign apijson = index[0] %}
-{% assign contents = site.data.api-commons %}
-{% assign apicommons = contents %}
-
-{% assign filter_name = '' %}
-
-{% assign blog_url = '' %}
-{% assign blogrss_url = '' %}
-{% assign portal_url = '' %}
-{% assign gitub_url = '' %}
-{% assign twitter_url = '' %}
-{% assign website_url = '' %}
-
 {% assign definitions = apijson.definitions %}
-{{ definitions }}
-{% for common in apijson.x-common %}
-
-  {% if common.type == 'x-getting-started' %}
-    {% assign getting_started_url = common.url %}
-  {% endif %}
-  {% if common.type == 'x-authentication-overview' %}
-    {% assign authentication_url = common.url %}
-  {% endif %}
-  {% if common.type == 'x-faq' %}
-    {% assign faq_url = common.url %}
-  {% endif %}
-  {% if common.type == 'x-login' %}
-    {% assign login_url = common.url %}
-  {% endif %}
-  {% if common.type == 'x-selfservice-registration' %}
-    {% assign signup_url = common.url %}
-  {% endif %}
-
-  {% if common.type == 'x-documentation' %}
-    {% assign documentation_url = common.url %}
-  {% endif %}
-
-  {% if common.type == 'x-code-page' %}
-    {% assign code_page_url = common.url %}
-  {% endif %}
-
-  {% if common.type == 'x-road-map' %}
-    {% assign road_map_url = common.url %}
-  {% endif %}
-  {% if common.type == 'x-issues' %}
-    {% assign issue_url = common.url %}
-  {% endif %}
-  {% if common.type == 'x-change-log' %}
-    {% assign change_log_url = common.url %}
-  {% endif %}
-  {% if common.type == 'x-status' %}
-    {% assign status_dashboard_url = common.url %}
-  {% endif %}
-
-  {% if common.type == 'x-support' %}
-    {% assign support_url = common.url %}
-  {% endif %}
-
-  {% if common.type == 'x-api-plan' %}
-    {% assign api_plan_url = common.url %}
-  {% endif %}
-  {% if common.type == 'x-rate-limit' %}
-    {% assign rate_limit_url = common.url %}
-  {% endif %}
-
-{% endfor %}
 
   <tr>
     <td>
@@ -210,18 +146,6 @@ layout: page
                       {% if property.type == 'x-openapi' %}
                         {% assign openapi_spec_url = property.url %}
                         {% assign openapi_spec_json = site.data.api-commons.openapi %}
-                      {% endif %}
-
-                      {% if property.type == 'x-postman %}
-                        {% assign postman_url = property.url %}
-                      {% endif %}
-
-                      {% if property.type == 'x-api-blueprint' %}
-                        {% assign api_blueprint_url = property.url %}
-                      {% endif %}
-
-                      {% if property.type == 'x-api-actions' %}
-                        {% assign api_action_url = property.url %}
                       {% endif %}
 
                       {% if property.type == 'x-api-filters' %}

@@ -155,7 +155,7 @@ layout: default
 
                             {% for path in openapi_spec_json.paths %}
 
-                              {% assign this_path = path[0] %}                            
+                              {% assign this_path = path[0] %}
                               {% assign method_json = path[1] %}
 
                               {% for method in method_json %}
@@ -177,39 +177,20 @@ layout: default
                               <td colspan="5" style="padding-top: 10px;"><strong>{{ grouptag }}</strong></td>
                             </tr>
 
-                            {% assign spec = openapi_spec_json %}
+                              {% assign api_title = openapi_spec_json.info.title %}
+                              {% assign api_description = openapi_spec_json.info.description %}
 
-                              {% assign api_title = spec.info.title %}
-                              {% assign api_description = spec.info.description %}
-
-                              {% assign api_host = spec.host %}
-                              {% assign api_base = spec.basePath %}
+                              {% assign api_host = openapi_spec_json.host %}
+                              {% assign api_base = openapi_spec_json.basePath %}
 
                               {% assign api_url = api_host | prepend:'https://' %}
                               {% assign api_url = api_url | append:api_base %}
 
-                              {% for path in spec.paths %}
+                              {% for path in openapi_spec_json.paths %}
 
                                 {% assign this_path = path[0] %}
                                 {% assign method_json = path[1] %}
 
-                                {% assign filter_path = 1 %}
-                                {% for filter in api_filters %}
-                                  {% assign this_filter_name = filter.name %}
-                                  {% if this_filter_name == filter_name %}
-                                    {% for show in filter.filters %}
-                                      {% if this_path == show.path %}
-                                        {% assign filter_path = 0 %}
-                                      {% endif %}
-                                    {% endfor %}
-                                  {% endif %}
-                                {% endfor %}
-
-                                {% if filter_name == '' %}
-                                  {% assign filter_path = 0 %}
-                                {% endif %}
-
-                                {% if filter_path == 0 %}
                                   {% for method in method_json %}
 
                                     {% assign parameters = method[1].parameters %}
@@ -389,7 +370,6 @@ layout: default
 
 
                               {% endfor %}
-                            {% endfor %}
 
 
                         <tr style="margin: 5px;">

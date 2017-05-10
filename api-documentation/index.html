@@ -148,34 +148,7 @@ layout: default
                         {% assign openapi_spec_json = site.data.api-commons.openapi %}
                       {% endif %}
 
-                      {% if property.type == 'x-api-filters' %}
-
-                        {% assign api_filters_url = property.url %}
-                        {% assign api_filter_path = api_filters_url | replace: '_data/api-commons/','' %}
-                        {% assign api_filter_path = api_filter_path | replace: '.yaml','' %}
-                        {% assign api_filter_path = api_filter_path | replace: '.json','' %}
-                        {% assign api_filter_path = api_filter_path | replace: '/','.' %}
-                        {% assign api_filter_path = api_filter_path | replace: 'api-commons.','' %}
-
-                        {% for entry in apicommons %}
-                          {% assign thisname = entry[0] %}
-                          {% assign thisentry = entry[1] %}
-                          {% if thisname == api_filter_path %}
-                            {% assign api_filters = thisentry %}
-                          {% endif %}
-                        {% endfor %}
-
-                      {% endif %}
-
                     {% endfor %}
-
-                    {% if filter_name != null and filter_name != empty %}
-                      <tr>
-                        <td align="center" colspan="2" style="font-size: 18px; font-weight: bold; padding: 10px;">
-                          {{ filter_name }}
-                        </td>
-                      </tr>
-                    {% endif %}
 
                     <tr style="background-color: #D3D3D3;">
                       <td align="left" style="font-size: 18px; font-weight: bold; padding: 10px;">
@@ -183,8 +156,7 @@ layout: default
                       </td>
                       <td align="right" style="padding: 10px;">
                           <strong>OpenAPI:</strong>
-                          (<a href="https://raw.githubusercontent.com/{{ site.github_org }}/{{ site.github_repo }}/master/_data/api-commons/openapi.yaml" target="_blank" title="YAML OpenAPI" style="font-size: 16px; font-weight: normal;">YAML</a>)
-                          (<a href="{{ site.url }}data/openapi.json" target="_blank" title="View OpenAPI Spec" style="font-size: 16px; font-weight: normal;">JSON</a>)
+                          (<a href="{{ site.url }}/apis/openapi.json" target="_blank" title="View OpenAPI Spec" style="font-size: 16px; font-weight: normal;">JSON</a>)
                       </td>
                     </tr>
                     <tr>

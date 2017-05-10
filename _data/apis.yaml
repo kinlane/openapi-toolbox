@@ -28,11 +28,11 @@ apis:
     properties:
       - type: x-openapi
         url: https://raw.githubusercontent.com/kinlane/openapi-toolbox/master/_data/openapi.yaml
-  x-common:
-    - type: x-support
-      url: https://github.com/kinlane/openapi-toolbox/issues
-    - type: x-documentation
-      url: http://openapi.toolbox.apievangelist.com/api-documentation/
+x-common:
+  - type: x-support
+    url: https://github.com/kinlane/openapi-toolbox/issues
+  - type: x-documentation
+    url: http://openapi.toolbox.apievangelist.com/api-documentation/
 include: []
 maintainers:
   - FN: Kin Lane

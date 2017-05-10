@@ -142,7 +142,7 @@ layout: default
                       </td>
                       <td align="right" style="padding: 10px;">
                           <strong>OpenAPI:</strong>
-                          (<a href="{{ site.url }}/apis/openapi.json" target="_blank" title="View OpenAPI Spec" style="font-size: 16px; font-weight: normal;">JSON</a>)
+                          (<a href="{{ site.url }}apis/openapi.json" target="_blank" title="View OpenAPI Spec" style="font-size: 16px; font-weight: normal;">JSON</a>)
                       </td>
                     </tr>
                     <tr id="methods-for-{{ pathname }}">
@@ -390,8 +390,7 @@ layout: default
                           </td>
                         </tr>
                         {% assign taglist = '' %}
-                        {% for spec in openapi_spec_json %}
-                          {% for definition in spec.definitions %}
+                          {% for definition in openapi_spec_json.definitions %}
                             {% assign definition_name = definition[0] %}
                             {% assign fields = definition[1] %}
                             <tr>
@@ -405,7 +404,6 @@ layout: default
                                 </ul>
                               </td>
                             </tr>
-                          {% endfor %}
                         {% endfor %}
 
                         </table>

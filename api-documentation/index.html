@@ -224,8 +224,8 @@ layout: default
                                       {% assign slug = path[0] | replace: '/','' %}
 
                                       <tr>
-                                        <td style="padding-left: 20px; font-size: 12px;">{{ summary }}</td>
-                                        <td style="font-size: 12px;">{{ path[0] }}</td>
+                                        <td style="padding-left: 20px; font-size: 14px;">{{ summary }}</td>
+                                        <td style="font-size: 14px;">{{ path[0] }}</td>
                                         <td align="center" style="padding: 1px; width: 75px; background-color:#{{ back_color }}; font-weight: bold; font-size: 11px; color: #FFF;">
                                           {{ verb }}
                                         </td>
@@ -253,10 +253,10 @@ layout: default
                                               <!-- If there are any headers -->
                                               {% if any_headers > 0 %}
                                                 <tr style="background-color: #CCC;">
-                                                  <td style="font-size: 12px; padding: 5px;"><strong>Headers:</strong></td>
+                                                  <td style="font-size: 14px; padding: 5px;"><strong>Headers:</strong></td>
                                                 </tr>
                                                 <tr>
-                                                  <td align="left" style="font-size: 12px; padding: 10px;">
+                                                  <td align="left" style="font-size: 14px; padding: 10px;">
                                                       <table style="width: 50%;">
                                                         {% for parameter in parameters %}
                                                           {% if parameter.in == 'header' %}
@@ -289,10 +289,10 @@ layout: default
                                               <!-- If there are any headers -->
                                               {% if any_path_parameters > 0 %}
                                                 <tr style="background-color: #CCC;">
-                                                  <td style="font-size: 12px; padding: 5px;"><strong>Path Parameters:</strong></td>
+                                                  <td style="font-size: 14px; padding: 5px;"><strong>Path Parameters:</strong></td>
                                                 </tr>
                                                 <tr>
-                                                  <td align="left" style="font-size: 12px; padding: 10px;">
+                                                  <td align="left" style="font-size: 14px; padding: 10px;">
                                                       <table style="width: 50%;">
                                                         {% for parameter in parameters %}
                                                           {% if parameter.in == 'path' %}
@@ -325,10 +325,10 @@ layout: default
                                               <!-- If there are any headers -->
                                               {% if any_parameters > 0 %}
                                                 <tr style="background-color: #CCC;">
-                                                  <td style="font-size: 12px; padding: 5px;"><strong>Parameters:</strong></td>
+                                                  <td style="font-size: 14px; padding: 5px;"><strong>Parameters:</strong></td>
                                                 </tr>
                                                 <tr>
-                                                  <td align="left" style="font-size: 12px; padding: 10px;">
+                                                  <td align="left" style="font-size: 14px; padding: 10px;">
                                                       <table style="width: 50%;">
                                                         {% for parameter in parameters %}
                                                           {% if parameter.in == 'query' %}
@@ -347,10 +347,10 @@ layout: default
                                             </form>
 
                                             <tr style="background-color: #CCC;">
-                                              <td style="font-size: 12px; padding: 5px;"><strong>Response:</strong></td>
+                                              <td style="font-size: 14px; padding: 5px;"><strong>Response:</strong></td>
                                             </tr>
                                             <tr>
-                                              <td style="font-size: 12px; padding: 10px;">
+                                              <td style="font-size: 14px; padding: 10px;">
                                                 <textarea id="{{ slug }}-response" style="overflow: auto; height: 5px; width: 100%; border: 0px solid #FFF;"></textarea>
                                               </td>
                                             </tr>
@@ -360,7 +360,7 @@ layout: default
                                               </td>
                                             </tr>
                                             <tr>
-                                              <td align="center"s tyle="font-size: 12px; padding: 25px;">
+                                              <td align="center"s tyle="font-size: 14px; padding: 25px;">
                                                 <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}');">Make API Request</button>
                                               </td>
                                             </tr>

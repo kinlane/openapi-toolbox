@@ -395,7 +395,7 @@ layout: default
                             {% assign fields = definition[1] %}
                             <tr>
                               <td style="padding: 15px 25px 0px 25px;" colspan='5'>
-                                <strong>{{ definition_name }}</strong>
+                                <strong>{{ definition_name | capitalize }}</strong>
                                 <ul style='padding-left: 50px;'>
                                   {% for property in fields.properties %}
                                     {% assign property_name = property[0] %}

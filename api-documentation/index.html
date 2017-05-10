@@ -97,8 +97,6 @@ layout: default
 {% assign apijson = site.data.apis %}
 {% assign definitions = apijson.definitions %}
 
-{{ apijson }}
-
 <table cellpadding="3" cellspacing="2" width="100%" border="0" style="margin-top: 0px;">
   <tr>
     <td>
@@ -134,6 +132,7 @@ layout: default
                       {{ property.type }}<br />
                       {% if property.type == 'x-openapi' %}
                         {% assign openapi_spec_url = property.url %}
+                        {{ openapi_spec_url }}<br />
                         {% assign openapi_spec_json = site.data.api-commons.openapi %}
                       {% endif %}
 

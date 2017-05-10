@@ -2,7 +2,7 @@
 {% for tool in site.data.tools %}
   {% if tool.type contains page.tag %}
     {% assign this_json = tool | json | replace: '=>', ':' %}
-    {% assign filtered_data = this_json | append: ',' %}
+    {% assign filtered_data = filtered_data | append: this_json | append: ',' %}
   {% endif %}
 {% endfor %}
 

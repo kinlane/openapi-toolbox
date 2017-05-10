@@ -153,6 +153,8 @@ layout: default
                         <table width="95%" border="0" style="margin-left: 15px;">
                           {% assign taglist = '' %}
 
+                          {% for spec in openapi_spec_json %}
+                          spec: {{ spec }}
                             {% for path in openapi_spec_json.paths %}
 
                               {% assign this_path = path[0] %}
@@ -170,6 +172,7 @@ layout: default
                               {% endfor %}
 
                             {% endfor %}
+                          {% endfor %}
 
                           {% assign tagArray = taglist | split: "," %}
                           {% for grouptag in tagArray %}

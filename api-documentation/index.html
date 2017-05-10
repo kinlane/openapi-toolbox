@@ -129,7 +129,6 @@ layout: default
                       {% assign thisname = thisname | append:'/' %}
                       {% assign thisname = thisname | replace: ' ','-' %}
 
-                      {{ property.type }}<br />
                       {% if property.type == 'x-openapi' %}
                         {% assign openapi_spec_json = site.data.openapi %}
                       {% endif %}
@@ -150,9 +149,10 @@ layout: default
                     </tr>
                     <tr id="methods-for-{{ pathname }}">
                       <td colspan="2">
-
+-- {{ openapi_spec_json }} --
                         <table width="95%" border="0" style="margin-left: 15px;">
                           {% assign taglist = '' %}
+
                           {% for spec in openapi_spec_json %}
                             {% for path in spec.paths %}
 

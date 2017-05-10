@@ -94,8 +94,7 @@ layout: default
     }
 </script>
 
-{% assign index = site.data.apis %}
-{% assign apijson = index[0] %}
+{% assign apijson = site.data.apis %}
 {% assign definitions = apijson.definitions %}
 
 {{ apijson }}

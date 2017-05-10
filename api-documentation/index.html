@@ -145,9 +145,6 @@ layout: default
                           (<a href="{{ site.url }}/apis/openapi.json" target="_blank" title="View OpenAPI Spec" style="font-size: 16px; font-weight: normal;">JSON</a>)
                       </td>
                     </tr>
-                    <tr>
-                      <td align="center" colspan="2" style="padding: 10px;"><strong>base url:</strong> {{ api.baseURL }}</td>
-                    </tr>
                     <tr id="methods-for-{{ pathname }}">
                       <td colspan="2">
 
@@ -174,15 +171,19 @@ layout: default
                           {% assign tagArray = taglist | split: "," %}
                           {% for grouptag in tagArray %}
 
-                            <tr>
-                              <td colspan="5" style="padding-top: 10px;"><strong>{{ grouptag }}</strong></td>
-                            </tr>
-
                               {% assign api_title = openapi_spec_json.info.title %}
                               {% assign api_description = openapi_spec_json.info.description %}
 
                               {% assign api_host = openapi_spec_json.host %}
                               {% assign api_base = openapi_spec_json.basePath %}
+
+                              <tr>
+                                <td align="center" colspan="2" style="padding: 10px;"><strong>base url:</strong> {{ api_host }}{{ api_base }}</td>
+                              </tr>
+
+                              <tr>
+                                <td colspan="5" style="padding-top: 10px;"><strong>{{ grouptag }}</strong></td>
+                              </tr>
 
                               {% assign api_url = api_host | prepend:'http://' %}
                               {% assign api_url = api_url | append:api_base %}

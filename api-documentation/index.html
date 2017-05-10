@@ -171,6 +171,8 @@ layout: default
                           {% assign tagArray = taglist | split: "," %}
                           {% for grouptag in tagArray %}
 
+                            {% if grouptag != '' %}
+
                               {% assign api_title = openapi_spec_json.info.title %}
                               {% assign api_description = openapi_spec_json.info.description %}
 
@@ -178,7 +180,7 @@ layout: default
                               {% assign api_base = openapi_spec_json.basePath %}
 
                               <tr>
-                                <td align="center" colspan="2" style="padding: 10px;"><strong>base url:</strong> {{ api_host }}{{ api_base }}</td>
+                                <td align="center" colspan="5" style="padding: 10px;"><strong>base url:</strong> {{ api_host }}{{ api_base }}</td>
                               </tr>
 
                               <tr>
@@ -370,6 +372,9 @@ layout: default
                                   {% endfor %}
 
                               {% endfor %}
+
+                            {% endif %}
+
                             {% endfor %}
 
 

@@ -131,9 +131,7 @@ layout: default
 
                       {{ property.type }}<br />
                       {% if property.type == 'x-openapi' %}
-                        {% assign openapi_spec_url = property.url %}
-                        {{ openapi_spec_url }}<br />
-                        {% assign openapi_spec_json = site.data.api-commons.openapi %}
+                        {% assign openapi_spec_json = site.data.openapi %}
                       {% endif %}
 
                     {% endfor %}

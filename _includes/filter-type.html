@@ -1,10 +1,11 @@
 {% assign filtered_data = '' %}
-{% assign count = 0 %}
 {% for tool in site.data.tools %}
   {% if tool.type contains page.tag %}
-    {% assign filtered_data[count] = tool %}
-    {% assign count = count | plus: 1 %}
+    {% assign this_json = tool | json | replace: '=>', ':' %}
+    {% assign filtered_data = this_json | append: ',' %}
   {% endif %}
 {% endfor %}
-{% assign publish_json = filtered_data | json | replace: '=>', ':' %}
-{{ publish_json }}
+
+{% assign filtered_data = '[' | append: filtered_data  | append: ']' %}
+
+{{ filtered_data }}

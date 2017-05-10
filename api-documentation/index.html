@@ -77,6 +77,7 @@ layout: default
 
           $viewer = JSON.stringify(response, null, 2);
           //console.log($viewer);
+          $viewer = $viewer.replace(/\\"/g, '"');
           document.getElementById($slug+'-response').value = $viewer;
           document.getElementById($slug+'-response').style.width = "100%";
           document.getElementById($slug+'-response').style.height = "450px";

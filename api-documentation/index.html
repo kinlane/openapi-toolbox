@@ -93,12 +93,14 @@ layout: default
 
     }
 </script>
-<table cellpadding="3" cellspacing="2" width="100%" border="0" style="margin-top: 0px;">
 
 {% assign index = site.data.apis %}
 {% assign apijson = index[0] %}
 {% assign definitions = apijson.definitions %}
 
+{{ apijson }}
+
+<table cellpadding="3" cellspacing="2" width="100%" border="0" style="margin-top: 0px;">
   <tr>
     <td>
         <span style="font-size: 22px;"><strong>API Documentation</strong></span>
@@ -109,12 +111,6 @@ layout: default
       {{ apijson.description }}
     </td>
   </tr>
-  <!--<tr>
-    <td align="center" style="padding-bottom: 5px;">
-        (<a href="learn-the-basics/" style="font-size: 14px;">Learn The Basics</a>)
-        (<a href="services-summary/" style="font-size: 14px;">Services Summary</a>)
-    </td>
-  </tr>-->
   <tr>
     <td>
       <table width="100%" border="0" style="padding-top: 10px;">
@@ -124,13 +120,10 @@ layout: default
             {% assign api_action_url = '' %}
             {% assign numberofapis = apijson.apis | size %}
 
-                {% assign api_action_url = '' %}
                 {% for api in apijson.apis %}
 
                 <table cellpadding="3" cellspacing="2" width="100%" border="0">
 
-                    {% assign api_action_spec = '' %}
-                    {% assign api_action_url = '' %}
                     {% assign openapi_spec_json = '' %}
 
                     {% for property in api.properties %}
@@ -138,10 +131,6 @@ layout: default
                       {% assign thisname = apijson.name | downcase %}
                       {% assign thisname = thisname | append:'/' %}
                       {% assign thisname = thisname | replace: ' ','-' %}
-
-                      {% if property.type == 'x-json-schema' %}
-                        {% assign json_schema_url = property.url %}
-                      {% endif %}
 
                       {% if property.type == 'x-openapi' %}
                         {% assign openapi_spec_url = property.url %}

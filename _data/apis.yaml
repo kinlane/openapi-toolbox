@@ -34,7 +34,9 @@ x-common:
   - type: x-documentation
     url: http://openapi.toolbox.apievangelist.com/api-documentation/
   - type: x-github-repo
-    url: https://github.com/kinlane/openapi-toolbox   
+    url: https://github.com/kinlane/openapi-toolbox
+  - type: x-google-sheet
+    url: https://docs.google.com/spreadsheets/d/15jtjyQivmgMohiKiUcnyJCsN48lk97suR8QfPFJd9ak/pubhtml
 include: []
 maintainers:
   - FN: Kin Lane

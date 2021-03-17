@@ -1,4 +1,0 @@
----
-layout: none
----
-{% assign yaml_data = site.data.openapi %}{% assign show_json = yaml_data | json | replace: '=>', ':' %}{{ show_json }}

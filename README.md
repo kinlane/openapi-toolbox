@@ -1,3 +1,3 @@
 # OpenAPI Toolbox
 
-A Github repository of tooling built using the OpenAPI specification - http://openapi.toolbox.apievangelist.com/
+This project has been combined with other specification to create the API Specification Toolbox - https://api.specificationtoolbox.com/
